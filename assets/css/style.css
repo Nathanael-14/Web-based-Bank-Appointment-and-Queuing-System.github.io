@@ -673,8 +673,7 @@ section {
 
 /* Section for Icons */
 .services .icon-box-pink .icon {
-  color: #c758ab;
-  /*background: url("../img/withdraw.png")*/
+  background: url("../img/withdraw.png");
   background-position: center;
 }
 
@@ -692,7 +691,7 @@ section {
 }
 
 .services .icon-box-green .icon {
-  background-image: url("../img/new account.jpg");
+  background-image: url("../img/new\ account.jpg");
   background-position: center;
 }
 
