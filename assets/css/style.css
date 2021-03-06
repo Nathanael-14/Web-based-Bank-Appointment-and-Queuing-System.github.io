@@ -673,7 +673,7 @@ section {
 
 /* Section for Icons */
 .services .icon-box-pink .icon {
-  background: url("assets/img/withdraw.png");
+  background-image: url("assets/img/withdraw.png");
   background-position: center;
 }
 
@@ -682,7 +682,7 @@ section {
 }
 
 .services .icon-box-cyan .icon {
-  background: url("assets/img/deposit.png");
+  background-image: url("assets/img/deposit.png");
   background-position: center;
 }
 
@@ -691,7 +691,7 @@ section {
 }
 
 .services .icon-box-green .icon {
-  background: url("assets/img/new account.png");
+  background-image: url("assets/img/new\ account.png");
   background-position: center;
 }
 
