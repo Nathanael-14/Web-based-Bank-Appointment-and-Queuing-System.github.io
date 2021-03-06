@@ -679,7 +679,7 @@ section {
 
 /* Section for Icons */
 .services .icon-box-pink .icon {
-  background: url('assets/img/withdraw.png');
+  background: url('/Web-based-Bank-Appointment-and-Queuing-System.github.io/assets/img/withdraw.png');
   background-position: center;
 }
 
@@ -688,7 +688,7 @@ section {
 }
 
 .services .icon-box-cyan .icon {
-  background: url('assets/img/deposit.png');
+  background: url('/Web-based-Bank-Appointment-and-Queuing-System.github.io/assets/img/deposit.png');
   background-position: center;
 }
 
@@ -697,7 +697,7 @@ section {
 }
 
 .services .icon-box-green .icon {
-  background: url('assets/img/new\ account.png.png');
+  background: url('/Web-based-Bank-Appointment-and-Queuing-System.github.io/assets/img/new\ account.png.png');
   background-position: center;
 }
 
