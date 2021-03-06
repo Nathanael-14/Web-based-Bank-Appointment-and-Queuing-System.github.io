@@ -691,7 +691,7 @@ section {
 }
 
 .services .icon-box-green .icon {
-  background-image: url("../img/new\ account.jpg");
+  background: url("../img/new-account.jpg");
   background-position: center;
 }
 
