@@ -107,6 +107,18 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
+/*css for login html*/
+.login{
+  position: absolute;
+  top: 15%;
+  right: 3%;
+  border: solid 2px;
+  padding: 5px 8px 5px 10px;
+  color: #fff;
+  transition: 0.3s;
+}
+/*css for login html*/
+
 .nav-menu, .nav-menu * {
   margin: 0;
   padding: 0;
