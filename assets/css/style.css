@@ -673,7 +673,8 @@ section {
 
 /* Section for Icons */
 .services .icon-box-pink .icon {
-  background-image: url("assets/img/withdraw.png");
+  color: #c758ab;
+  /*background: url("../img/withdraw.png")*/
   background-position: center;
 }
 
@@ -682,7 +683,7 @@ section {
 }
 
 .services .icon-box-cyan .icon {
-  background-image: url("assets/img/deposit.png");
+  background: url("../img/deposit.png");
   background-position: center;
 }
 
@@ -691,7 +692,7 @@ section {
 }
 
 .services .icon-box-green .icon {
-  background-image: url("assets/img/new\ account.png");
+  background-image: url("../img/new account.jpg");
   background-position: center;
 }
 
