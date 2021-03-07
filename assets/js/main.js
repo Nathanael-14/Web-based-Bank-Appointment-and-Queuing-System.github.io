@@ -185,3 +185,9 @@
   });
 
 })(jQuery);
+
+//LOGIN FORM function start
+$('.message a').click(function(){
+   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+});
+//LOGIN FORM function end
