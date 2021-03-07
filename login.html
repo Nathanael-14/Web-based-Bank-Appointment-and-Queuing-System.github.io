@@ -82,49 +82,28 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
+ <!-- ======= LOGIN Section ======= -->
   <section id="hero" class="d-flex justify-cntent-center align-items-center">
-    <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel">
-
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Moderna</span></h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+      <div class="login-page">
+        <div class="form">
+          <form id="register" class="register-form">
+            <input type="text" placeholder="Full Name"/>
+            <input type="text" placeholder="Email Address"/>
+            <input type="text" placeholder="Username"/>
+            <input type="password" placeholder="Password"/>
+            <input type="password" placeholder="Confirm Password"/>
+            <button>create</button>
+            <p class="message" style="color:black">Already registered? <a href="#" onclick="login()">Sign In</a></p>
+          </form>
+          <form id="login" class="login-form">
+            <input type="text" placeholder="Username"/>
+            <input type="password" placeholder="Password"/>
+            <button>login</button>
+            <p class="message" style="color:black">Not registered? <a href="#" onclick="register()">Create an account</a></p>
+          </form>
         </div>
       </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-          <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
-        </div>
-      </div>
-
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-
-    </div>
-  </section><!-- End Hero -->
+  </section><!-- End LOGIN -->
 
   <main id="main">
 
