@@ -73,11 +73,12 @@
             </ul>
           </li>
           <li><a href="contact.html">Contact Us</a></li>
+          <!-- LOGIN HTML, TOP RIGHT NG HOME PAGE -->
+          <li class="active"><a href="login.html" class="login" id="login" >Login</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
-        <!-- LOGIN HTML, TOP RIGHT NG HOME PAGE -->
-        <li class="active"><a href="login.html" class="login" id="login" >Login</a></li>
+        
 
     </div>
   </header><!-- End Header -->
@@ -87,19 +88,18 @@
       <div class="login-page">
         <div class="form">
           <form id="register" class="register-form">
-            <input type="text" placeholder="Full Name"/>
-            <input type="text" placeholder="Email Address"/>
-            <input type="text" placeholder="Username"/>
-            <input type="password" placeholder="Password"/>
-            <input type="password" placeholder="Confirm Password"/>
-            <button>create</button>
-            <p class="message" style="color:black">Already registered? <a href="#" onclick="login()">Sign In</a></p>
+            <input type="text" placeholder="Account"/>
+            <input type="text" placeholder="First Name"/>
+            <input type="text" placeholder="Middle Name"/>
+            <input type="text" placeholder="Last Name"/>
+            <button>verify</button>
+            <p class="message" style="color:black">Already registered? <a href="#">Sign In</a></p>
           </form>
           <form id="login" class="login-form">
             <input type="text" placeholder="Username"/>
             <input type="password" placeholder="Password"/>
             <button>login</button>
-            <p class="message" style="color:black">Not registered? <a href="#" onclick="register()">Create an account</a></p>
+            <p class="message" style="color:black">Not registered? <a href="#">Create an account</a></p>
           </form>
         </div>
       </div>
