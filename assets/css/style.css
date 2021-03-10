@@ -20,11 +20,6 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   font-family: "Roboto", sans-serif;
 }
 
-li
-{
-  list-style-type: none;
-}
-
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -107,14 +102,14 @@ li
 --------------------------------------------------------------*/
 /* Desktop Navigation */
 /*css for login html*/
-.login{
-  position: absolute;
-  top: 15%;
-  right: 3%;
+.nav-menu .login{
+  display: inline-block;
   border: solid 2px;
   padding: 5px 8px 5px 10px;
   color: #fff;
   transition: 0.3s;
+  border-radius: 5px;
+  text-align: center;
 }
 /*css for login html*/
 
