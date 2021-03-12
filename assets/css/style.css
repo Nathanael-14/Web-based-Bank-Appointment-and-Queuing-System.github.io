@@ -951,7 +951,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Team
+# Profile Page
 --------------------------------------------------------------*/
 .team {
   background: #fff;
@@ -992,15 +992,12 @@ section {
   color: #68A4C4;
 }
 
-.team .member .social i {
-  font-size: 18px;
-  margin: 0 2px;
-}
 
 .team .member .member-info h4 {
   font-weight: 700;
   margin: 15px 0 5px 0;
   font-size: 18px;
+  display: inline;
 }
 
 .team .member .member-info span {
@@ -1025,6 +1022,40 @@ section {
   transition: bottom ease-in-out 0.4s;
 }
 
+.team .myAccount {
+  background: #f3f8fa;
+  border: 2px solid #295368;
+  margin: 0px 0px 0px 40px;
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 80px;
+  border-radius: 20px;
+}
+.team .myAccount h2{
+  position: relative;
+  left: 215px;
+}
+.team .myAccount h4{
+  display: inline;
+}
+.team .myAccount h5{
+  display: inline;
+}
+.team .myAccountPosition {
+  position: relative;
+  left: 220px;
+  bottom: 25px;
+}
+
+.team hr{
+  position: relative;
+  right: 15px;
+  width: 600px;
+
+}
+/*--------------------------------------------------------------
+# END PROFILE PAGE
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
