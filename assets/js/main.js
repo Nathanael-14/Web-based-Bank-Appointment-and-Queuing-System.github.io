@@ -191,3 +191,11 @@ $('.message a').click(function(){
    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 });
 //LOGIN FORM function end
+
+//PROFILE SETTINGS START
+function profileEdit(){
+  document.getElementsByName("firstName").removeAttr("readonly");
+  //document.getElementById("firstName").style.opacity ="0";
+  //document.getElementById("firstName").style.visibility ="hidden";
+}
+//PROFILE SETTINGS END
