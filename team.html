@@ -108,17 +108,14 @@
             <div class="member">
               <div class="member-img">
                 <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="">View Image</a>
-                </div>
               </div>
               <div class="member-info"><br>
                 <h4>First Name</h4> &nbsp
                 <h4>M.I.</h4> &nbsp
                 <h4>Last Name</h4> &nbsp<br><br>
-                <a href="#">My Account</a> <br><br>
-                <a href="#">My Appointments</a> <br><br>
-                <a href="#">Settings</a><br>
+                <a href="javascript:void(0);">My Account</a> <br><br>
+                <a href="javascript:void(0);">My Appointments</a> <br><br>
+                <a href="javascript:void(0);">Profile Settings</a><br>
             </div>
           </div>
         </div>
@@ -131,6 +128,47 @@
             <h4>Username:</h4> <div class="myAccountPosition"><h5>My Username</h5> <br><br></div>
             <h4>Email Address:</h4> <div class="myAccountPosition"><h5>My Email Address</h5> <br><br></div>
             <h4>Account Number:</h4> <div class="myAccountPosition"><h5>My Account Number</h5> <br><br></div>
+          </div>
+        </div>
+        <div class="myAppointmentsContainer">
+          <div class="myAppointments">
+            <h2>Appointments</h2><br>
+            <a href='javascript:void(0);' >Upcoming</a> &nbsp &nbsp &nbsp
+            <a href='javascript:void(0);' class="inactiveLink">History</a><hr><br>
+
+          </div>
+        </div>
+        <div class="profileSettingsContainer">
+          <div class="profileSettings">
+            <h2>Profile Settings</h2><hr><br>
+            <h4>Personal Info</h4>
+            <p>Your information displayed in appointments</p>
+            <form>
+              <label for="firstName">First Name</label>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <label for="middleName">Middle Name</label><br>
+              <input id="firstName" type="text" name="firstName" value="First Name" readonly></input> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <input id="middleName" type="text" name="middleName" value="Middle Name" readonly></input><br><br>
+              <label for="lastName">Last Name</label>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <label for="emailAddress">Email Address</label><br>
+              <input id="lastName" type="text" name="lastName" value="Last Name" readonly></input> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <input id="emailAddress" type="text" name="emailAddress" value="Email Address" readonly></input>
+              <a id="profileEdit" onclick="profileEdit()">Edit</a><br><br><hr><br>
+            </form>
+            <h4>Account Details</h4>
+            <p>Your login credentials in Appoint.io</p>
+            <form>
+              <label for="username">Username</label>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <label for="password">Password</label><br>
+              <input id="username" type="text" name="username" value="username" readonly></input> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <input id="password" type="password" name="password" value="password" readonly></input>
+              <a id="accountEdit" onclick="accountEdit()">Edit</a><br><br>
+            </form>
           </div>
         </div>
 
