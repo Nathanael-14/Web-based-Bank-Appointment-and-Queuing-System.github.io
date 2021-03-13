@@ -1033,7 +1033,7 @@ section {
 }
 .team .myAccount h2{
   position: relative;
-  left: 215px;
+  left: 210px;
 }
 .team .myAccount h4{
   display: inline;
@@ -1051,11 +1051,61 @@ section {
   position: relative;
   right: 15px;
   width: 600px;
+}
 
+.team .myAppointments {
+  background: #f3f8fa;
+  border: 2px solid #295368;
+  margin: 0px 0px 0px 40px;
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 80px;
+  border-radius: 20px;
+}
+.team .myAppointments h2{
+  position: relative;
+  left: 205px;
+}
+
+.team .profileSettings {
+  background: #f3f8fa;
+  border: 2px solid #295368;
+  margin: 0px 0px 0px 40px;
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 80px;
+  border-radius: 20px;
+}
+.team .profileSettings h2{
+  position: relative;
+  left: 205px;
+}
+
+.team .profileSettings form a{
+  position: relative;
+  margin-left: 40px;
+  border: 1px solid #295368;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom:  2px;
+  background: white;
+}
+.team .profileSettings form a:hover{
+  cursor: pointer;
+  background: #DDDDDD;
+}
+.team .profileSettings form a:active{
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 4px;
+  padding-bottom:  4px;
 }
 /*--------------------------------------------------------------
 # END PROFILE PAGE
 --------------------------------------------------------------*/
+
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
