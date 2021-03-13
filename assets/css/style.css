@@ -103,15 +103,16 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 /* Desktop Navigation */
 /*css for login html*/
 .nav-menu .login{
-  display: inline-block;
-  border: solid 2px;
-  padding: 5px 8px 5px 10px;
   color: #fff;
   transition: 0.3s;
-  border-radius: 5px;
-  text-align: center;
+  text-align: right;
+  font-family: "Open Sans", sans-serif;
+  display: inline;
+  border: 2px solid;
+  border-radius: 10px;
+  margin-top: 6px;
+  padding: 2px 20px 2px;
 }
-
 .nav-menu .log{
   margin-right: -100px;
   padding-left: 90px;
