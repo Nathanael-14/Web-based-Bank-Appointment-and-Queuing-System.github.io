@@ -111,6 +111,11 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   border-radius: 5px;
   text-align: center;
 }
+
+.nav-menu .log{
+  margin-right: -100px;
+  padding-left: 90px;
+}
 /*css for login html*/
 
 .nav-menu, .nav-menu * {
