@@ -193,9 +193,37 @@ $('.message a').click(function(){
 //LOGIN FORM function end
 
 //PROFILE SETTINGS START
+function showMyAccount(){
+  document.getElementById("myAppointmentsContainer").style.opacity ="0";
+  document.getElementById("myAppointmentsContainer").style.visibility ="hidden";
+  document.getElementById("profileSettingsContainer").style.opacity ="0";
+  document.getElementById("profileSettingsContainer").style.visibility ="hidden";
+  document.getElementById("myAccountContainer").style.opacity ="100";
+  document.getElementById("myAccountContainer").style.visibility ="visible";
+}
+
+function showMyAppointments(){
+  document.getElementById("myAccountContainer").style.opacity ="0";
+  document.getElementById("myAccountContainer").style.visibility ="hidden";
+  document.getElementById("profileSettingsContainer").style.opacity ="0";
+  document.getElementById("profileSettingsContainer").style.visibility ="hidden";
+  document.getElementById("myAppointmentsContainer").style.opacity ="100";
+  document.getElementById("myAppointmentsContainer").style.visibility ="visible";
+}
+
+function showProfileSettings(){
+  document.getElementById("myAccountContainer").style.opacity ="0";
+  document.getElementById("myAccountContainer").style.visibility ="hidden";
+  document.getElementById("myAppointmentsContainer").style.opacity ="0";
+  document.getElementById("myAppointmentsContainer").style.visibility ="hidden";
+  document.getElementById("profileSettingsContainer").style.opacity ="100";
+  document.getElementById("profileSettingsContainer").style.visibility ="visible";
+}
+
 function profileEdit(){
   document.getElementsByName("firstName").removeAttr("readonly");
   //document.getElementById("firstName").style.opacity ="0";
   //document.getElementById("firstName").style.visibility ="hidden";
 }
 //PROFILE SETTINGS END
+
