@@ -1105,6 +1105,26 @@ section {
   padding-top: 4px;
   padding-bottom:  4px;
 }
+
+.team .myAccountContainer{
+  position: absolute;
+  right: 15%;
+  transition: 0.3s;
+}
+
+.team .myAppointmentsContainer{
+  position: absolute;
+  right: 15%;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.team .profileSettingsContainer{
+  position: absolute;
+  right: 15%;
+  visibility: hidden;
+  transition: 0.3s;
+}
 /*--------------------------------------------------------------
 # END PROFILE PAGE
 --------------------------------------------------------------*/
