@@ -112,14 +112,14 @@
                 <h4>First Name</h4> &nbsp
                 <h4>M.I.</h4> &nbsp
                 <h4>Last Name</h4> &nbsp<br><br>
-                <a href="javascript:void(0);">My Account</a> <br><br>
-                <a href="javascript:void(0);">My Appointments</a> <br><br>
-                <a href="javascript:void(0);">Profile Settings</a><br>
+                <a href="javascript:void(0);" onclick="showMyAccount()">My Account</a> <br><br>
+                <a href="javascript:void(0);" onclick="showMyAppointments()">My Appointments</a> <br><br>
+                <a href="javascript:void(0);" onclick="showProfileSettings()">Profile Settings</a><br>
             </div>
           </div>
         </div>
 
-        <div class="myAccountContainer">
+        <div id="myAccountContainer" class="myAccountContainer">
           <div class="myAccount">
             <h2>My Account</h2><hr><br>
 
@@ -129,15 +129,24 @@
             <h4>Account Number:</h4> <div class="myAccountPosition"><h5>My Account Number</h5> <br><br></div>
           </div>
         </div>
-        <div class="myAppointmentsContainer">
+        <div id="myAppointmentsContainer" class="myAppointmentsContainer">
           <div class="myAppointments">
             <h2>Appointments</h2><br>
-            <a href='javascript:void(0);' >Upcoming</a> &nbsp &nbsp &nbsp
-            <a href='javascript:void(0);' class="inactiveLink">History</a><hr><br>
-
+            <h5>Upcoming</h5> <hr>
+            <tr>
+              <td>Appointment</td> &nbsp
+              <td>Date</td> &nbsp
+              <td>Time</td> &nbsp
+            </tr><br> <br><br><br>
+            <h5>History</h5><hr>
+            <tr>
+              <td>Appointment</td> &nbsp
+              <td>Date</td> &nbsp
+              <td>Time</td> &nbsp
+            </tr><br> <br><br>
           </div>
         </div>
-        <div class="profileSettingsContainer">
+        <div id="profileSettingsContainer" class="profileSettingsContainer">
           <div class="profileSettings">
             <h2>Profile Settings</h2><hr><br>
             <h4>Personal Info</h4>
@@ -175,7 +184,7 @@
     </section><!-- End Team Section -->
 
   </main><!-- End #main -->
-
+  <br><br><br><br><br><br>
   <!-- ======= Footer ======= -->
   <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
 
