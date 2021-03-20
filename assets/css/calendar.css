@@ -6,8 +6,6 @@
     box-sizing: border-box;
   }
    
-  
-
 body {
     margin: 0;
     background: rgb(87, 83, 83);
@@ -19,7 +17,6 @@ body {
     width: 720px;
     height: auto;
     max-width: 100%;
-    position: absolute;
     top: 120px;
     left: 0;
     right: 0;
