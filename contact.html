@@ -146,55 +146,52 @@
                 </div>
               </div>
             </div>
-            <div class="timepicker" ng-if="picktime == 'true'">
-              <div ng-class="{'am': timeframe == 'am', 'pm': timeframe == 'pm' }">
-                <div class="timepicker-container-outer" selectedtime="time" timetravel>
-                  <div class="timepicker-container-inner">
-                    <div class="timeline-container" ng-mousedown="timeSelectStart($event)" sm-touchstart="timeSelectStart($event)">
-                      <div class="current-time">
-                        <div class="actual-time">{{ time }}</div>
-                      </div>
-                      <div class="timeline">
-                      </div>
-                      <div class="hours-container">
-                        <div class="hour-mark" ng-repeat="hour in getHours() track by $index"></div>
-                      </div>
-                    </div>
-                    <div class="display-time">
-                      <div class="decrement-time" ng-click="adjustTime('decrease')">
-                        <svg width="24" height="24">
-                          <path stroke="white" stroke-width="2" d="M8,12 h8"/>
-                        </svg>
-                      </div>
-                      <div class="time" ng-class="{'time-active': edittime.active}">
-                        <input type="text" class="time-input" ng-model="edittime.input" ng-keydown="changeInputTime($event)" ng-focus="edittime.active = true; edittime.digits = [];" ng-blur="edittime.active = false"/>
-                        <div class="formatted-time">{{ edittime.formatted }}</div>
-                      </div>
-                      <div class="increment-time" ng-click="adjustTime('increase')">
-                        <svg width="24" height="24">
-                          <path stroke="white" stroke-width="2" d="M12,7 v10 M7,12 h10"/>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="am-pm-container">
-                      <div class="am-pm-button" ng-click="changetime('am');">am</div>
-                      <div class="am-pm-button" ng-click="changetime('pm');">pm</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             
+            <div class="timeline">
+            </div>
+
             <div class="buttons-container">
               <div class="cancel-button">CANCEL</div>
               <div class="save-button">SAVE</div>
             </div>
-            
+
+            <div class="timepicker" ng-if="picktime == 'true'">    
+                <div class="timepicker-container-outer" selectedtime="time" timetravel>
+                    <div class="form-group">
+                      <label class="control-label" for="appointmentfor">Appointment For:</label>
+                      <select id="appointmentfor" name="appointmentfor" class="form-control">
+                          <option value="Service#1">Withdraw</option>
+                          <option value="Service#2">Deposit</option>
+                          <option value="Service#3">New Accounts</option>
+                      </select>
+                    </div>
+
+                    <label class="control-label" for="timeSlot">Time Slots Available:</label><br>
+                    <div class="radio-toolbar">
+                      <input type="radio" id="radio910" name="timeslot" value="9AM-10AM" >
+                      <label for="radio910">9AM - 10AM</label>
+                  
+                      <input type="radio" id="radio1011" name="timeslot" value="10AM-11AM">
+                      <label for="radio1011">10AM - 11AM</label>
+                  
+                      <input type="radio" id="radio1112" name="timeslot" value="11AM-12AM">
+                      <label for="radio1112">11AM-12AM</label>
+
+                      <input type="radio" id="radio12" name="timeslot" value="1PM-2PM">
+                      <label for="radio12">1 PM - 2 PM</label>&nbsp;
+
+                      <input type="radio" id="radio23" name="timeslot" value="2PM-3PM">
+                      <label for="radio23">  2 PM - 3 PM   </label>&nbsp;
+
+                      <input type="radio" id="radio34" name="timeslot" value="3PM-4PM">
+                      <label for="radio34">3 PM - 4 PM</label> 
+                  </div>
+                </div>
+            </div>   
           </div>
         </div>
       </div>
     </section><!-- End Calendar Section -->
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
