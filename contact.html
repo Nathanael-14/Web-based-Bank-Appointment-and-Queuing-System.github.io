@@ -27,6 +27,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/calendar.css" rel="stylesheet">
   
 </head>
 
@@ -91,80 +92,108 @@
       </div>
     </section><!-- End Contact Section -->
 
-    <!-- ======= Contact Section ======= -->
+    <!-- ======= Calendar Section ======= -->
     <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-6">
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="info-box">
-                  <i class="bx bx-map"></i>
-                  <h3>Our Address</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+      <div class="app-container" ng-app="dateTimeApp" ng-controller="dateTimeCtrl as ctrl" ng-cloak>
+		
+        <div date-picker
+           datepicker-title="Select Date"
+           picktime="true"
+           pickdate="true"
+           pickpast="false"
+           mondayfirst="false"
+           custom-message="You have selected"
+           selecteddate="ctrl.selected_date"
+           updatefn="ctrl.updateDate(newdate)">
+        
+          <div class="datepicker"
+             ng-class="{
+              'am': timeframe == 'am',
+              'pm': timeframe == 'pm',
+              'compact': compact
+            }">
+            <div class="datepicker-header">
+              <div class="datepicker-title" ng-if="datepicker_title">{{ datepickerTitle }}</div>
+              <div class="datepicker-subheader">{{ customMessage }} {{ selectedDay }} {{ monthNames[localdate.getMonth()] }} {{ localdate.getDate() }}, {{ localdate.getFullYear() }}</div>
+            </div>
+            <div class="datepicker-calendar">
+              <div class="calendar-header">
+                <div class="goback" ng-click="moveBack()" ng-if="pickdate">
+                  <svg width="30" height="30">
+                    <path fill="none" stroke="#0DAD83" stroke-width="3" d="M19,6 l-9,9 l9,9"/>
+                  </svg>
+                </div>
+                <div class="current-month-container">{{ currentViewDate.getFullYear() }} {{ currentMonthName() }}</div>
+                <div class="goforward" ng-click="moveForward()" ng-if="pickdate">
+                  <svg width="30" height="30">
+                    <path fill="none" stroke="#0DAD83" stroke-width="3" d="M11,6 l9,9 l-9,9" />
+                  </svg>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bx bx-envelope"></i>
-                  <h3>Email Us</h3>
-                  <p>info@example.com<br>contact@example.com</p>
-                </div>
+              <div class="calendar-day-header">
+                <span ng-repeat="day in days" class="day-label">{{ day.short }}</span>
               </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bx bx-phone-call"></i>
-                  <h3>Call Us</h3>
-                  <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+              <div class="calendar-grid" ng-class="{false: 'no-hover'}[pickdate]">
+                <div
+                  ng-class="{'no-hover': !day.showday}"
+                  ng-repeat="day in month"
+                  class="datecontainer"
+                  ng-style="{'margin-left': calcOffset(day, $index)}"
+                  track by $index>
+                  <div class="datenumber" ng-class="{'day-selected': day.selected }" ng-click="selectDate(day)">
+                    {{ day.daydate }}
+                  </div>
                 </div>
               </div>
             </div>
-
-          </div>
-
-          <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="form-row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validate"></div>
+            <div class="timepicker" ng-if="picktime == 'true'">
+              <div ng-class="{'am': timeframe == 'am', 'pm': timeframe == 'pm' }">
+                <div class="timepicker-container-outer" selectedtime="time" timetravel>
+                  <div class="timepicker-container-inner">
+                    <div class="timeline-container" ng-mousedown="timeSelectStart($event)" sm-touchstart="timeSelectStart($event)">
+                      <div class="current-time">
+                        <div class="actual-time">{{ time }}</div>
+                      </div>
+                      <div class="timeline">
+                      </div>
+                      <div class="hours-container">
+                        <div class="hour-mark" ng-repeat="hour in getHours() track by $index"></div>
+                      </div>
+                    </div>
+                    <div class="display-time">
+                      <div class="decrement-time" ng-click="adjustTime('decrease')">
+                        <svg width="24" height="24">
+                          <path stroke="white" stroke-width="2" d="M8,12 h8"/>
+                        </svg>
+                      </div>
+                      <div class="time" ng-class="{'time-active': edittime.active}">
+                        <input type="text" class="time-input" ng-model="edittime.input" ng-keydown="changeInputTime($event)" ng-focus="edittime.active = true; edittime.digits = [];" ng-blur="edittime.active = false"/>
+                        <div class="formatted-time">{{ edittime.formatted }}</div>
+                      </div>
+                      <div class="increment-time" ng-click="adjustTime('increase')">
+                        <svg width="24" height="24">
+                          <path stroke="white" stroke-width="2" d="M12,7 v10 M7,12 h10"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="am-pm-container">
+                      <div class="am-pm-button" ng-click="changetime('am');">am</div>
+                      <div class="am-pm-button" ng-click="changetime('pm');">pm</div>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-6 form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validate"></div>
-                </div>
               </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+            </div>
+            
+            <div class="buttons-container">
+              <div class="cancel-button">CANCEL</div>
+              <div class="save-button">SAVE</div>
+            </div>
+            
           </div>
-
         </div>
-
       </div>
-    </section><!-- End Contact Section -->
-
-    <!-- ======= Map Section ======= -->
-    <section class="map mt-2">
-      <div class="container-fluid p-0">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2sbg!4v1579767901424!5m2!1sen!2sbg" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-      </div>
-    </section><!-- End Map Section -->
+    </section><!-- End Calendar Section -->
 
   </main><!-- End #main -->
 
@@ -247,6 +276,9 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js'></script>
+  <script  src="./assets/js/calendar.js"></script>
 
 </body>
 
