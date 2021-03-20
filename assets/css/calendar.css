@@ -1,5 +1,14 @@
+ [ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+  }
   
-  body {
+  * {
+    box-sizing: border-box;
+  }
+   
+  
+
+body {
     margin: 0;
     background: rgb(87, 83, 83);
   }
