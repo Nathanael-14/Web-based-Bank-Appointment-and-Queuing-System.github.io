@@ -11,8 +11,8 @@ body {
     background: rgb(87, 83, 83);
   }
   
-  .app-container {
-    border-radius: 4px;
+   .app-container {
+    border-radius: 1px;
     overflow: hidden;
     width: 720px;
     height: auto;
@@ -21,7 +21,10 @@ body {
     left: 0;
     right: 0;
     margin: auto;
+    border-style: solid;
+    border-color: #454849;
   }
+  
   
   .buttons-container {
     position: absolute;
@@ -45,11 +48,11 @@ body {
   
   .cancel-button {
     background: white;
-    color: #0DAD83;
+    color: #0d2735;
   }
   
   .save-button {
-    background: #0DAD83;
+    background: #0d2735;
     color: white;
   }
   
@@ -112,7 +115,7 @@ body {
   }
   
   .calendar-header {
-    color: black;
+    color: #0d2735;
     font-weight: bolder;
     text-align: center;
     font-size: 18px;
@@ -235,10 +238,10 @@ body {
   
   @-webkit-keyframes select-date {
     0% {
-      background: #FFAB91;
+      background: #0d2735;
     }
     100% {
-      background: #FF6E40;
+      background: #0d2735;
     }
   }
   @keyframes select-date {
@@ -465,7 +468,7 @@ body {
   }
   .time-input:focus ~ .formatted-time {
     border-radius: 2px;
-    background: #0DAD83;
+    background: #0d2735;
     color: white;
     cursor: default;
   }
@@ -522,10 +525,10 @@ body {
   }
   .datepicker.am .datepicker-header {
     color: white;
-    background: #0DAD83;
+    background: #0d2735;
   }
   .datepicker.am .current-time::after {
-    background: #0DAD83;
+    background: #0d2735;
   }
   .datepicker.am .actual-time {
     color: white;
