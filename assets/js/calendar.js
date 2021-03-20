@@ -478,23 +478,6 @@ app.directive('datePicker', function ($timeout, $window) {
                     }
                 });
            
-                angular.element($window).on('mouseup touchend', function (event) {
-                    if (scope.moving) {
-                        // var roundsection = Math.round(scope.currentoffset / sectionlength);
-                        // var newoffset = roundsection * sectionlength;
-                        // currenttime.css({
-                        //     transition: 'transform 0.25s ease',
-                        //     transform: 'translateX(' + (newoffset - 1) + 'px)',
-                        //     cursor: 'pointer',
-                        // });
-                        // scope.currentoffset = newoffset;
-                        // scope.totaloffset = scope.currentoffset;
-                        // $timeout(function () {
-                        //     scope.getTime();
-                        // }, 250);
-                    }
-                    scope.moving = false;
-                });
 
                 scope.adjustTime = function (direction) {
                     event.preventDefault();
