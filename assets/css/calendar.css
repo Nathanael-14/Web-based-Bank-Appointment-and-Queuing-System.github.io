@@ -1,7 +1,7 @@
 [ng\:cloak], [ng-cloak], .ng-cloak {
     display: none;
   }
-  
+
    /* Main Form */
   * {
     box-sizing: border-box;
@@ -10,7 +10,7 @@
     margin: 0;
     background: #FFF;
   }
-  
+
   .app-container {
     border-radius: 1px;
     overflow: hidden;
@@ -24,7 +24,7 @@
     border-style: solid;
     border-color: #454849;
   }
-  
+
   .buttons-container {
     position: absolute;
     bottom: 15px;
@@ -32,9 +32,9 @@
     height: 40px;
     font-family: "Roboto", sans-serif;
   }
-  
+
   .cancel-button,
-  .save-button {
+  .set-button {
     float: left;
     height: 40px;
     line-height: 40px;
@@ -43,18 +43,23 @@
     margin-right: 15px;
     cursor: pointer;
     transition: all 0.15s ease;
+    position: relative;
+    left: 185px;
   }
-  
+
   .cancel-button {
     background: white;
     color: #0d2735;
   }
-  
-  .save-button {
+
+  textarea{
+    resize: none
+  }
+  .set-button {
     background: #0d2735;
     color: white;
   }
-  
+
   .control-label{
       font-weight: bolder;
       color: #0d2735;
@@ -65,13 +70,13 @@
    .radio-toolbar {
     margin: 5px;
   }
-  
+
   .radio-toolbar input[type="radio"] {
     opacity: 0;
     position: fixed;
     width: 100px;
   }
-  
+
   .radio-toolbar label {
       display: inline-block;
       background-color: #ddd;
@@ -85,15 +90,15 @@
       margin-top: 7px;
       margin-left: 1px;
   }
-  
+
   .radio-toolbar label:hover {
     background-color: #dfd;
   }
-  
+
   .radio-toolbar input[type="radio"]:focus + label {
       border: 2px dashed #444;
   }
-  
+
   .radio-toolbar input[type="radio"]:checked + label {
       background-color: #0DAD83;
       border-color: #0d2735;
@@ -114,21 +119,21 @@
     overflow: hidden;
     transition: background 0.15s ease;
   }
-  
+
   .datepicker.am {
     background: white;
   }
-  
+
   .datepicker.pm {
     background: #0DAD83;
   }
-  
+
   .datepicker-header {
     width: 100%;
     color: white;
     overflow: hidden;
   }
-  
+
   .datepicker-title {
     width: 50%;
     float: left;
@@ -138,7 +143,7 @@
     text-align: left;
     font-size: 20px;
   }
-  
+
   .datepicker-subheader {
     width: 50%;
     float: left;
@@ -148,7 +153,7 @@
     padding: 0 15px;
     text-align: right;
   }
-  
+
   .datepicker-calendar {
     width: 50%;
     float: left;
@@ -156,7 +161,7 @@
     max-width: 400px;
     display: block;
   }
-  
+
   .calendar-header {
     color: #0d2735;
     font-weight: bolder;
@@ -165,13 +170,13 @@
     padding: 10px 0;
     position: relative;
   }
-  
+
   .current-month-container {
     display: inline-block;
     height: 30px;
     position: relative;
   }
-  
+
   .goback,
   .goforward {
     height: 30px;
@@ -182,27 +187,27 @@
     position: relative;
     top: -4px;
   }
-  
+
   .goback path,
   .goforward path {
     transition: stroke 0.15s ease;
   }
-  
+
   .goback {
     float: left;
     margin-left: 3.8%;
   }
-  
+
   .goforward {
     float: right;
     margin-right: 3.8%;
   }
-  
+
   .calendar-day-header {
     width: 100%;
     position: relative;
   }
-  
+
   .day-label {
     color: #8A8A8A;
     padding: 5px 0;
@@ -210,14 +215,14 @@
     display: inline-block;
     text-align: center;
   }
-  
+
   .datecontainer {
     width: 14.2857142%;
     display: inline-block;
     text-align: center;
     padding: 4px 0;
   }
-  
+
   .datenumber {
     max-width: 35px;
     max-height: 35px;
@@ -230,7 +235,7 @@
     z-index: 1;
     transition: all 0.25s cubic-bezier(0.7, -0.12, 0.2, 1.12);
   }
-  
+
   .no-hover .datenumber,
   .no-hover .datenumber:hover,
   .no-hover .datenumber:before,
@@ -240,15 +245,15 @@
     background: transparent;
     opacity: 0.5;
   }
-  
+
   .no-hover .datenumber.day-selected {
     color: white;
   }
-  
+
   .datenumber:hover {
     color: white;
   }
-  
+
   .datenumber:before {
     content: "";
     display: block;
@@ -262,23 +267,23 @@
     transition: all 0.25s cubic-bezier(0.7, -0.12, 0.2, 1.12);
     transition-property: background, transform, color, border;
   }
-  
+
   .datenumber:hover::before {
     background: #0d2735;
     transform: scale(1);
   }
-  
+
   .day-selected {
     color: white;
   }
-  
+
   .datenumber.day-selected:before {
     background: #FF6E40;
     transform: scale(1);
     -webkit-animation: select-date 0.25s forwards;
     animation: select-date 0.25s forwards;
   }
-  
+
   @-webkit-keyframes select-date {
     0% {
       background: #0d2735;
@@ -307,7 +312,7 @@
     -webkit-tap-highlight-color: transparent;
     transition: background 0.15s ease;
   }
-  
+
   .timepicker-container-inner {
     width: 100%;
     height: 100%;
@@ -316,7 +321,7 @@
     position: relative;
     display: block;
   }
-  
+
   .timeline-container {
     display: block;
     float: left;
@@ -324,7 +329,7 @@
     width: 100%;
     height: 36px;
   }
-  
+
   .datepicker.am .datepicker-header {
     color: white;
     background: #0d2735;
@@ -332,7 +337,7 @@
   .datepicker.am .current-time::after {
     background: #0d2735;
   }
- 
+
   .datepicker.pm .goback:before,
   .datepicker.pm .goback:after,
   .datepicker.pm .goforward:before,
@@ -394,7 +399,7 @@
     background: white;
     color: #FF693C;
   }
-  
+
   .datepicker.compact .datepicker-title,
   .datepicker.compact .datepicker-subheader {
     width: 100%;
