@@ -28,7 +28,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/calendar.css" rel="stylesheet">
-  
+
 </head>
 
 <body>
@@ -65,13 +65,13 @@
               <li><a href="#">Drop Down 5</a></li>
             </ul>
           </li>
-          <li class="active"><a href="contact.html">Set Appoinment</a></li> 
+          <li class="active"><a href="contact.html">Set Appoinment</a></li>
           <!-- LOGIN HTML, TOP RIGHT NG HOME PAGE -->
           <li class="log"><a href="login.html" class="login" id="login">Log in</a></li>
         </ul>
       </nav><!-- .nav-menu -->
-     
-      
+
+
     </div>
   </header><!-- End Header -->
 
@@ -95,7 +95,7 @@
     <!-- ======= Calendar Section ======= -->
     <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
       <div class="app-container" ng-app="dateTimeApp" ng-controller="dateTimeCtrl as ctrl" ng-cloak>
-		
+
         <div date-picker
            datepicker-title="Select Date"
            picktime="true"
@@ -105,7 +105,7 @@
            custom-message="You have selected"
            selecteddate="ctrl.selected_date"
            updatefn="ctrl.updateDate(newdate)">
-        
+
           <div class="datepicker"
              ng-class="{
               'am': timeframe == 'am',
@@ -116,7 +116,7 @@
               <div class="datepicker-title" ng-if="datepicker_title">{{ datepickerTitle }}</div>
               <div class="datepicker-subheader">{{ customMessage }} {{ selectedDay }} {{ monthNames[localdate.getMonth()] }} {{ localdate.getDate() }}, {{ localdate.getFullYear() }}</div>
             </div>
-            <div class="datepicker-calendar">
+            <div class="datepicker-calendar"><!---->
               <div class="calendar-header">
                 <div class="goback" ng-click="moveBack()" ng-if="pickdate">
                   <svg width="30" height="30">
@@ -145,17 +145,18 @@
                   </div>
                 </div>
               </div>
+
+              </select>
+
             </div>
-            
             <div class="timeline">
             </div>
 
-            <div class="buttons-container">
-              <div class="cancel-button">CANCEL</div>
-              <div class="save-button">SAVE</div>
-            </div>
+          <!--  <div class="buttons-container"><br><br>
+              <div class="set-button">SET APPOINTMENT</div>
+            </div> -->
 
-            <div class="timepicker" ng-if="picktime == 'true'">    
+            <div class="timepicker" ng-if="picktime == 'true'">
                 <div class="timepicker-container-outer" selectedtime="time" timetravel>
                     <div class="form-group">
                       <label class="control-label" for="appointmentfor">Appointment For:</label>
@@ -163,17 +164,19 @@
                           <option value="Service#1">Withdraw</option>
                           <option value="Service#2">Deposit</option>
                           <option value="Service#3">New Accounts</option>
-                      </select>
+                      </select><br>
+                      <label for="addNotes">Additional Notes:</label>
+                      <textarea id="addNotes" name="addNotes" rows="4" cols="45"></textarea>
                     </div>
 
                     <label class="control-label" for="timeSlot">Time Slots Available:</label><br>
                     <div class="radio-toolbar">
                       <input type="radio" id="radio910" name="timeslot" value="9AM-10AM" >
                       <label for="radio910">9AM - 10AM</label>
-                  
+
                       <input type="radio" id="radio1011" name="timeslot" value="10AM-11AM">
                       <label for="radio1011">10AM - 11AM</label>
-                  
+
                       <input type="radio" id="radio1112" name="timeslot" value="11AM-12AM">
                       <label for="radio1112">11AM-12AM</label>
 
@@ -184,10 +187,12 @@
                       <label for="radio23">  2 PM - 3 PM   </label>&nbsp;
 
                       <input type="radio" id="radio34" name="timeslot" value="3PM-4PM">
-                      <label for="radio34">3 PM - 4 PM</label> 
+                      <label for="radio34">3 PM - 4 PM</label>
+                      <br><br>
+                        <button class="set-button">SET APPOINTMENT</button>
                   </div>
                 </div>
-            </div>   
+            </div>
           </div>
         </div>
       </div>
@@ -199,7 +204,7 @@
 
     <!-- Removed default Newsletter Section -->
 
-   
+
     <!-- Removed default Newsletter Section -->
 
     <!-- Ganito nalang kada footer -->
@@ -229,8 +234,8 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
-              <a href="#" class="facebook"> Francis Jacob Aquino </a> <br> 
-             <a href="#" class="facebook"> Justin Oryan Go</a><br> 
+              <a href="#" class="facebook"> Francis Jacob Aquino </a> <br>
+             <a href="#" class="facebook"> Justin Oryan Go</a><br>
               <a href="#" class="facebook"> Nathanael Villaflor <br><br></a>
             </p>
 
