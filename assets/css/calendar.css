@@ -52,13 +52,22 @@
     color: #0d2735;
   }
 
+.Notes{
+  font-weight: bolder;
+  color: #0d2735;
+  font-size: 16px;
+}
+
   textarea{
     resize: none
   }
-  .set-button {
-    background: #0d2735;
-    color: white;
-  }
+ .set-button {
+  background: #0d2735;
+  color: white;
+  float: left;
+  margin-left: -90px;
+  margin-top: 30px;
+}
 
   .control-label{
       font-weight: bolder;
