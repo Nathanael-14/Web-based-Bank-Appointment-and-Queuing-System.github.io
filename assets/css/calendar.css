@@ -445,3 +445,45 @@
     position: relative;
     float: right;
   }
+
+  .app-container .personal-container{
+    position: relative;
+    left: 20px;
+    margin-top: 10px;
+    font-weight: bolder;
+    color: #0d2735;
+    font-size: 16px;
+  }
+
+  .app-container .personal-container .labelMargin{
+    margin-left: 132px;
+  }
+
+  .app-container .personal-container .inputMargin{
+    margin-left: 30px;
+  }
+
+  .app-container .personal-container .smallMargin{
+    margin-top: 15px;
+  }
+
+/*kung gusto nyo submit button sa personal info uncomment nyo lng
+ .submit-button{
+   float: left;
+   height: 40px;
+   line-height: 40px;
+   padding: 0 15px;
+   border-radius: 2px;
+   margin-right: 15px;
+   cursor: pointer;
+   transition: all 0.15s ease;
+   position: relative;
+   left: 500px;
+   bottom: 100px;
+   background: #0d2735;
+   color: white;
+   float: left;
+   margin-left: -90px;
+   margin-top: 30px;
+ }
+*/
