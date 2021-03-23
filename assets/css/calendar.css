@@ -75,8 +75,8 @@
   float: left;
   margin-left: -90px;
   margin-top: 30px;
-  height: 40px;
-  padding: 0 15px;
+  height: 35px;
+  padding: 5px 15px;
   border-radius: 2px;
   margin-right: 15px;
   cursor: pointer;
@@ -84,6 +84,7 @@
   position: relative;
   left: 185px;
 }
+
 
 
   .control-label{
