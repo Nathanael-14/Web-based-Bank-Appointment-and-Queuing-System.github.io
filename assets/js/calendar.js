@@ -516,3 +516,19 @@ app.directive('datePicker', function ($timeout, $window) {
         }
     };
 });
+
+function showDiv(select){
+    if(select.value=='Service3'){
+document.getElementById('hidden_div').style.display = "block";
+ } else{
+document.getElementById('hidden_div').style.display = "none";
+}
+}
+
+function hideDiv(select){
+ if(select.value=="Service#1" || select.value=="Service#2"){
+document.getElementById('display_div').style.display = "block";
+ } else{
+document.getElementById('display_div').style.display = "none";
+}
+}
