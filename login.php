@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>About | Appoint.io</title>
+  <title>Log In</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -50,37 +50,15 @@
 
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li class="active"><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Drop Down 2</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li ><a href="index.html">Home</a></li>
+          <li><a href="contact.html">Set Appointment</a></li>
+          <!-- LOGIN HTML, TOP RIGHT NG HOME PAGE -->
         </ul>
       </nav><!-- .nav-menu -->
+
       
     </div>
   </header><!-- End Header -->
-
-
-
 
   <main id="main">
 
@@ -130,12 +108,6 @@
       </div>
     </section><!-- End About Section -->
 
-     <!-- Removed Facts Section -->
-
-     <!-- Removed Skills Section -->
-    
-    <!-- Removed Testimonials Section -->
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -146,21 +118,20 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 footer-links">
+        <div class="col-lg-3 col-md-6 footer-links">
             <h4>Navigation</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="blog.html">Set Appointment</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="services.html">Withdraw</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="services.html">Deposit</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="services.html">New Accounts</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="login.php">Withdraw</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="login.php">Deposit</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="blog.html">New Accounts</a></li>
                 <!-- Tinaggal ko ang defualt tas replaced with sa mga services natin -->
             </ul>
           </div>
