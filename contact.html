@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Contact | Appoint.io</title>
+  <title>Set Appointment</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -47,27 +47,9 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="team.html">Profile</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Drop Down 2</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li>
           <li class="active"><a href="contact.html">Set Appoinment</a></li>
           <!-- LOGIN HTML, TOP RIGHT NG HOME PAGE -->
-          <li class="log"><a href="login.html" class="login" id="login">Log in</a></li>
+          <li class="log"><a href="login.php" class="login" id="login">Log in</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -146,7 +128,9 @@
                 </div>
               </div>
               </select>
-              <div ><button id="set-btn"class="set-button">SET APPOINTMENT</button></div>
+              <div id="display_div">
+                <button id="set-btn"class="set-button">SET APPOINTMENT</button>
+              </div>
             </div>
             <div class="timeline">
             </div>
@@ -157,7 +141,7 @@
                       <label class="control-label" for="appointmentfor">Appointment For:</label>
                       <select id="appointmentfor" name="appointmentfor" class="form-control" >
                           <option value="Service#1">Withdraw</option>
-                          <option value="Service#2">Deposit</option>        
+                          <option value="Service#2">Deposit</option>
                       </select><br>
                       <label for="addNotes" class="Notes">Additional Notes:</label>
                       <textarea id="addNotes" name="addNotes" rows="4" cols="45"></textarea>
@@ -209,7 +193,7 @@
             <h4>Navigation</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
-		<li><i class="bx bx-chevron-right"></i> <a href="team.html">Profile</a></li>
+		          <li><i class="bx bx-chevron-right"></i> <a href="team.html">Profile</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Set Appointment</a></li>
             </ul>
           </div>
@@ -217,8 +201,8 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="login.html">Withdraw</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="login.html.html">Deposit</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="login.php">Withdraw</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="login.php">Deposit</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="blog.html">New Accounts</a></li>
                 <!-- Tinaggal ko ang defualt tas replaced with sa mga services natin -->
             </ul>
