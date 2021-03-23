@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Contact | Appoint.io</title>
+  <title>Set Appointment</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -47,27 +47,9 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="team.html">Profile</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Drop Down 2</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li>
           <li class="active"><a href="contact.html">Set Appoinment</a></li>
           <!-- LOGIN HTML, TOP RIGHT NG HOME PAGE -->
-          <li class="log"><a href="login.html" class="login" id="login">Log in</a></li>
+          <li class="log"><a href="login.php" class="login" id="login">Log in</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -104,104 +86,32 @@
            mondayfirst="false"
            custom-message="You have selected"
            selecteddate="ctrl.selected_date"
-           updatefn="ctrl.updateDate(newdate)">
+           updatefn="ctrl.updateDate(newdate)"><!--This is useless pero wag lng to i delete.-->
 
           <div class="datepicker"
              ng-class="{
               'am': timeframe == 'am',
               'pm': timeframe == 'pm',
               'compact': compact
-            }">
+            }"><!--This is useless pero wag lng to i delete.-->
+
             <div class="datepicker-header">
-              <div class="datepicker-title" ng-if="datepicker_title">{{ datepickerTitle }}</div>
-              <div class="datepicker-subheader">{{ customMessage }} {{ selectedDay }} {{ monthNames[localdate.getMonth()] }} {{ localdate.getDate() }}, {{ localdate.getFullYear() }}</div>
+              <div class="datepicker-title">New Account Form</div>
             </div>
-            <div class="datepicker-calendar"><!---->
-              <div class="calendar-header">
-                <div class="goback" ng-click="moveBack()" ng-if="pickdate">
-                  <svg width="30" height="30">
-                    <path fill="none" stroke="#0DAD83" stroke-width="3" d="M19,6 l-9,9 l9,9"/>
-                  </svg>
-                </div>
-                <div class="current-month-container">{{ currentViewDate.getFullYear() }} {{ currentMonthName() }}</div>
-                <div class="goforward" ng-click="moveForward()" ng-if="pickdate">
-                  <svg width="30" height="30">
-                    <path fill="none" stroke="#0DAD83" stroke-width="3" d="M11,6 l9,9 l-9,9" />
-                  </svg>
-                </div>
-              </div>
-              <div class="calendar-day-header">
-                <span ng-repeat="day in days" class="day-label">{{ day.short }}</span>
-              </div>
-              <div class="calendar-grid" ng-class="{false: 'no-hover'}[pickdate]">
-                <div
-                  ng-class="{'no-hover': !day.showday}"
-                  ng-repeat="day in month"
-                  class="datecontainer"
-                  ng-style="{'margin-left': calcOffset(day, $index)}"
-                  track by $index>
-                  <div class="datenumber" ng-class="{'day-selected': day.selected }" ng-click="selectDate(day)">
-                    {{ day.daydate }}
-                  </div>
-                </div>
-              </div>
-              </select>
+            <div class="personal-container">
+              <label for="firstName">First name:</label>
+              <label class="labelMargin" for="emailAddress">Email Address:</label><br>
+              <input type="text" id="firstName" name="firstName" value="">
+              <input class="inputMargin" type="text" id="emailAddress" name="emailAddress" value=""><br>
+              <div class="smallMargin">
+              <label for="lastName">Last name:</label>
+              <label class="labelMargin" for="contactNumber">Contact Number:</label><br>
+              <input type="text" id="lastName" name="lastName" value="">
+              <input class="inputMargin" type="text" id="contactNumber" name="contactNumber" value=""><br><br>
               <button class="set-button">SET APPOINTMENT</button>
             </div>
-            <div class="timeline">
             </div>
-
-            <div class="timepicker" ng-if="picktime == 'true'">
-                <div class="timepicker-container-outer" selectedtime="time" timetravel>
-                    <div class="form-group">
-                      <label class="control-label" for="appointmentfor">Appointment For:</label>
-                      <select id="appointmentfor" name="appointmentfor" class="form-control">
-                          <option value="Service#1">Withdraw</option>
-                          <option value="Service#2">Deposit</option>
-                          <option value="Service#3">New Accounts</option>
-                      </select><br>
-                      <label for="addNotes" class="Notes">Additional Notes:</label>
-                      <textarea id="addNotes" name="addNotes" rows="4" cols="45"></textarea>
-                    </div>
-
-                    <label class="control-label" for="timeSlot">Time Slots Available:</label><br>
-                    <div class="radio-toolbar">
-                      <input type="radio" id="radio910" name="timeslot" value="9AM-10AM" >
-                      <label for="radio910">9AM - 10AM</label>
-
-                      <input type="radio" id="radio1011" name="timeslot" value="10AM-11AM">
-                      <label for="radio1011">10AM - 11AM</label>
-
-                      <input type="radio" id="radio1112" name="timeslot" value="11AM-12AM">
-                      <label for="radio1112">11AM-12AM</label>
-
-                      <input type="radio" id="radio12" name="timeslot" value="1PM-2PM">
-                      <label for="radio12">1 PM - 2 PM</label>&nbsp;
-
-                      <input type="radio" id="radio23" name="timeslot" value="2PM-3PM">
-                      <label for="radio23">  2 PM - 3 PM   </label>&nbsp;
-
-                      <input type="radio" id="radio34" name="timeslot" value="3PM-4PM">
-                      <label for="radio34">3 PM - 4 PM</label>
-                  </div>
-                    </div>
-                </div>
             </div>
-          </div>
-          <div class="personal-container">
-            <label for="firstName">First name:</label>
-            <label class="labelMargin" for="emailAddress">Email Address:</label><br>
-            <input type="text" id="firstName" name="firstName" value="">
-            <input class="inputMargin" type="text" id="emailAddress" name="emailAddress" value=""><br>
-            <div class="smallMargin">
-            <label for="lastName">Last name:</label>
-            <label class="labelMargin" for="contactNumber">Contact Number:</label><br>
-            <input type="text" id="lastName" name="lastName" value="">
-            <input class="inputMargin" type="text" id="contactNumber" name="contactNumber" value=""><br><br>
-            <!--Kung gusto nyo submit button sa personal info uncomment nyo lng
-            <button class="submit-button">SUBMIT</button>
-          -->
-          </div>
           </div>
         </div>
       </div>
@@ -233,9 +143,9 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Withdraw</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Deposit</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">New Accounts</a></li>
+              li><i class="bx bx-chevron-right"></i> <a href="login.php">Withdraw</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="login.php">Deposit</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="blog.html">New Accounts</a></li>
                 <!-- Tinaggal ko ang defualt tas replaced with sa mga services natin -->
             </ul>
           </div>
