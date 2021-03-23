@@ -156,10 +156,10 @@
                 <div class="timepicker-container-outer" selectedtime="time" timetravel>
                     <div class="form-group">
                       <label class="control-label" for="appointmentfor">Appointment For:</label>
-                      <select id="appointmentfor" name="appointmentfor" class="form-control">
+                      <select id="appointmentfor" name="appointmentfor" class="form-control" onchange="showDiv(this) & hideDiv(this)">
                           <option value="Service#1">Withdraw</option>
                           <option value="Service#2">Deposit</option>
-                          <option value="Service#3">New Accounts</option>
+                          <option value="Service3">New Accounts</option>
                       </select><br>
                       <label for="addNotes" class="Notes">Additional Notes:</label>
                       <textarea id="addNotes" name="addNotes" rows="4" cols="45"></textarea>
