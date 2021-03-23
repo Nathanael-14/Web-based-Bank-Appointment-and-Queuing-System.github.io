@@ -676,17 +676,8 @@ section {
 }
 
 /* Section for Icons */
-.services .icon-box-pink .icon {
-  background: url("../img/withdraw.png");
-  background-position: center;
-}
-
-.services .icon-box-pink:hover {
-  border-color: #c758ab;
-}
-
 .services .icon-box-cyan .icon {
-  background: url("../img/deposit.png");
+  background: url("../img/bank.png");
   background-position: center;
 }
 
