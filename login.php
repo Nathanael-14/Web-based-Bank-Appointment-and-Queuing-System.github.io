@@ -76,10 +76,8 @@
     ?>
       
 
-    <!-- ======= About Section ======= -->
-    <section class="about" data-aos="fade-up">
-      <div class="container">
-
+    <!-- ======= Login Section ======= -->
+    <section id="hero" class="d-flex justify-cntent-center align-items-center">
         <div class="login-page">
         <div class="form" id="form1">
           <form id="register" class="register-form" method="POST">
@@ -105,8 +103,8 @@
 
             
       </div> 
-      </div>
-    </section><!-- End About Section -->
+    </section><!-- End Login Section -->
+
 
   </main><!-- End #main -->
 
