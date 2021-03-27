@@ -39,6 +39,11 @@
     border-color: #454849;
   }
 
+  .personal-container{
+    margin: auto;
+  }
+
+
   .buttons-container {
     position: absolute;
     bottom: 15px;
@@ -51,7 +56,6 @@
   .set-button {
     float: left;
     height: 40px;
-    line-height: 40px;
     padding: 0 15px;
     border-radius: 2px;
     margin-right: 15px;
@@ -83,7 +87,7 @@
   margin-top: 30px;
 }
 
-/* New Account Form */
+ /* New Account Form */
  input[type=text], select {
   width: 100%;
   padding: 12px 20px;
@@ -128,8 +132,6 @@
   position: relative;
   left: 185px;
 }
-
-
 
   .control-label{
       font-weight: bolder;
@@ -280,4 +282,272 @@
   }
 
   .day-label {
-    color: #8
+    color: #8A8A8A;
+    padding: 5px 0;
+    width: 14.2857142%;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .datecontainer {
+    width: 14.2857142%;
+    display: inline-block;
+    text-align: center;
+    padding: 4px 0;
+  }
+
+  .datenumber {
+    max-width: 35px;
+    max-height: 35px;
+    line-height: 35px;
+    margin: 0 auto;
+    color: #8A8A8A;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.25s cubic-bezier(0.7, -0.12, 0.2, 1.12);
+  }
+
+  .no-hover .datenumber,
+  .no-hover .datenumber:hover,
+  .no-hover .datenumber:before,
+  .no-hover .datenumber:hover::before {
+    cursor: default;
+    color: #8A8A8A;
+    background: transparent;
+    opacity: 0.5;
+  }
+
+  .no-hover .datenumber.day-selected {
+    color: white;
+  }
+
+  .datenumber:hover {
+    color: white;
+  }
+
+  .datenumber:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    border-radius: 100px;
+    z-index: -1;
+    background: transparent;
+    transform: scale(0.75);
+    transition: all 0.25s cubic-bezier(0.7, -0.12, 0.2, 1.12);
+    transition-property: background, transform, color, border;
+  }
+
+  .datenumber:hover::before {
+    background: #0d2735;
+    transform: scale(1);
+  }
+
+  .day-selected {
+    color: white;
+  }
+
+  .datenumber.day-selected:before {
+    background: #FF6E40;
+    transform: scale(1);
+    -webkit-animation: select-date 0.25s forwards;
+    animation: select-date 0.25s forwards;
+  }
+
+  @-webkit-keyframes select-date {
+    0% {
+      background: #0d2735;
+    }
+    100% {
+      background: #0d2735;
+    }
+  }
+  @keyframes select-date {
+    0% {
+      background: #0d2735;
+    }
+    100% {
+      background: #0d2735;
+    }
+  }
+  /* timepicker styles */
+  .timepicker-container-outer {
+    width: 50%;
+    max-width: 700px;
+    float: left;
+    display: block;
+    padding: 30px 20px 10px;
+    top: 50px;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.15s ease;
+  }
+
+  .timepicker-container-inner {
+    width: 100%;
+    height: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+  }
+
+  .timeline-container {
+    display: block;
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 36px;
+  }
+
+  .datepicker.am .datepicker-header {
+    color: white;
+    background: #0d2735;
+  }
+  .datepicker.am .current-time::after {
+    background: #0d2735;
+  }
+
+  .datepicker.pm .goback:before,
+  .datepicker.pm .goback:after,
+  .datepicker.pm .goforward:before,
+  .datepicker.pm .goforward:after {
+    background: white;
+  }
+  .datepicker.pm .day-label {
+    color: white;
+  }
+  .datepicker.pm .datenumber {
+    color: white;
+  }
+  .datepicker.pm .datenumber:hover::before {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1);
+  }
+  .datepicker.pm .datenumber.day-selected {
+    color: #FF693C;
+  }
+  .datepicker.pm .datenumber.day-selected:before {
+    background: white;
+    -webkit-animation: select-date-pm 0.25s forwards;
+    animation: select-date-pm 0.25s forwards;
+  }
+  .datepicker.pm .current-month-container {
+    color: white;
+  }
+  .datepicker.pm .current-time::after {
+    background: white;
+  }
+  .datepicker.pm .actual-time {
+    color: #FF6E40;
+  }
+  .datepicker.pm .display-time {
+    color: white;
+  }
+  .datepicker.pm .timeline::before, .datepicker.pm .pm .timeline::after {
+    background: white;
+  }
+  .datepicker.pm .hour-mark {
+    background: white;
+  }
+  .datepicker.pm .am-pm-button:last-child {
+    color: #FF6E40;
+  }
+  .datepicker.pm .cancel-button {
+    background: none;
+    color: white;
+  }
+  .datepicker.pm .save-button {
+    background: white;
+    color: #FF693C;
+  }
+  .datepicker.pm .goback path,
+  .datepicker.pm .goforward path {
+    stroke: white;
+  }
+  .datepicker.pm .time-input:focus ~ .formatted-time {
+    background: white;
+    color: #FF693C;
+  }
+
+  .datepicker.compact .datepicker-title,
+  .datepicker.compact .datepicker-subheader {
+    width: 100%;
+    text-align: center;
+  }
+  .datepicker.compact .datepicker-title {
+    height: 50px;
+    line-height: 50px;
+  }
+  .datepicker.compact .datepicker-subheader {
+    height: 30px;
+    line-height: 30px;
+  }
+  .datepicker.compact .display-time {
+    width: 60%;
+    font-size: 20px;
+    line-height: 36px;
+  }
+  .datepicker.compact .app-container {
+    width: 100%;
+  }
+  .datepicker.compact .datepicker-calendar {
+    width: 100%;
+    margin: 0 auto;
+    float: none;
+  }
+  .datepicker.compact .timepicker-container-outer {
+    width: 100%;
+    margin: 0 auto;
+    float: none;
+    top: -15px;
+  }
+  .datepicker.compact .buttons-container {
+    position: relative;
+    float: right;
+  }
+
+  .app-container .personal-container{
+    position: relative;
+    left: 20px;
+    margin-top: 10px;
+    font-weight: bolder;
+    color: #0d2735;
+    font-size: 16px;
+  }
+
+  .app-container .personal-container .labelMargin{
+    margin-left: 132px;
+  }
+
+  .app-container .personal-container .inputMargin{
+    margin-left: 30px;
+  }
+
+  .app-container .personal-container .smallMargin{
+    margin-top: 15px;
+  }
+
+/*kung gusto nyo submit button sa personal info uncomment nyo lng
+ .submit-button{
+   float: left;
+   height: 40px;
+   line-height: 40px;
+   padding: 0 15px;
+   border-radius: 2px;
+   margin-right: 15px;
+   cursor: pointer;
+   transition: all 0.15s ease;
+   position: relative;
+   left: 500px;
+   bottom: 100px;
+   background: #0d2735;
+   color: white;
+   float: left;
+   margin-left: -90px;
+   margin-top: 30px;
+ }
+*/
