@@ -64,10 +64,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Set Appointment</h2>
+          <h2>New Account</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Set Appointment</li>
+            <li>New Account</li>
           </ol>
         </div>
 
@@ -75,8 +75,8 @@
     </section><!-- End Contact Section -->
 
     <!-- ======= Calendar Section ======= -->
-    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
-      <div class="app-container" ng-app="dateTimeApp" ng-controller="dateTimeCtrl as ctrl" ng-cloak>
+   <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="new-container" ng-app="dateTimeApp" ng-controller="dateTimeCtrl as ctrl" ng-cloak>
 
         <div date-picker
            datepicker-title="Select Date"
@@ -86,31 +86,37 @@
            mondayfirst="false"
            custom-message="You have selected"
            selecteddate="ctrl.selected_date"
-           updatefn="ctrl.updateDate(newdate)"><!--This is useless pero wag lng to i delete.-->
+           updatefn="ctrl.updateDate(newdate)">
 
           <div class="datepicker"
              ng-class="{
               'am': timeframe == 'am',
               'pm': timeframe == 'pm',
               'compact': compact
-            }"><!--This is useless pero wag lng to i delete.-->
-
+            }">
             <div class="datepicker-header">
-              <div class="datepicker-title">New Account Form</div>
+              <div class="datepicker-title" ng-if="datepicker_title">New Account Form</div>
             </div>
-            <div class="personal-container">
-              <label for="firstName">First name:</label>
-              <label class="labelMargin" for="emailAddress">Email Address:</label><br>
-              <input type="text" id="firstName" name="firstName" value="">
-              <input class="inputMargin" type="text" id="emailAddress" name="emailAddress" value=""><br>
-              <div class="smallMargin">
-              <label for="lastName">Last name:</label>
-              <label class="labelMargin" for="contactNumber">Contact Number:</label><br>
-              <input type="text" id="lastName" name="lastName" value="">
-              <input class="inputMargin" type="text" id="contactNumber" name="contactNumber" value=""><br><br>
-              <button class="set-button">SET APPOINTMENT</button>
-            </div>
-            </div>
+
+            <div class="timepicker" ng-if="picktime == 'true'">
+                <div class="timepicker-container-outer" selectedtime="time" timetravel>
+                    <div class="form-group">
+                      <label class="control-label" for="fname">First Name:</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
+
+                        <label class="control-label" for="Mname">Middle Name:</label>
+                        <input type="text" id="Mname" name="MiddleName" placeholder="Your  Middle name.."><br>
+                    
+                        <label class="control-label" for="lname">Last Name:</label>
+                        <input type="text" id="lname" name="LastName" placeholder="Your last name.."><br>
+                    
+                        <label class="control-label" for="EmailAdd">Email Address:</label>
+                        <input type="text" id="EmailAdd" name="Email" placeholder="Your email address..">
+                    </div>
+                     
+                      <a href="new-account.html" class="save-button">SAVE APPOINTMENT</a>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
