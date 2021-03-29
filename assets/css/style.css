@@ -1158,3 +1158,19 @@ section {
   display: none;
 }
 /** Login CSS END*/
+
+/**ADMIN VIEW APPOINTMENTS PAGE CSS*/
+.tableContainer{
+  margin: 20px;
+}
+.tableContainer button{
+  padding: 5px 10px 5px 10px;
+  background: #68A4C4;
+  color: #fff;
+  font-style: bold;
+}
+.tableContainer button:hover{
+  background:#45beff;
+  transition: 0.3s;
+}
+/**ADMIN VIEW APPOINTMENTS PAGE CSS END*/
