@@ -1,4 +1,4 @@
-# Web Based Bank Appointment & Queuing System
+# Web-based Bank Appointment & Queuing System
 The Web-based Bank Appointment and Queuing System intends to conduct on analysis regarding different types of queueing problems and solutions. 
 
 Online appointments provide the customers the convenience of appointment services using the internet. The use of online reservations provides benefits to the consumer as it creates new capabilities not found before. 
