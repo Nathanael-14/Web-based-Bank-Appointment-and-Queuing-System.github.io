@@ -43,15 +43,14 @@
     <div class="container">
 
       <div class="logo float-left">
-        <h1 class="text-light"><a href="index.html"><span>Appoint.io</span></a></h1>
+        <h1 class="text-light"><a href="index.php"><span>Appoint.io</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
-          <li ><a href="index.html">Home</a></li>
-          <li><a href="contact.html">Set Appointment</a></li>
+          <li ><a href="index.php">Home</a></li>
           <!-- LOGIN HTML, TOP RIGHT NG HOME PAGE -->
         </ul>
       </nav><!-- .nav-menu -->
@@ -77,7 +76,7 @@
       
 
     <!-- ======= Login Section ======= -->
-    <section id="hero" class="d-flex justify-cntent-center align-items-center">
+    <section class="d-flex justify-cntent-center align-items-center">
         <div class="login-page">
         <div class="form" id="form1">
           <form id="register" class="register-form" method="POST">
@@ -100,8 +99,6 @@
             <p class="message" style="color:black">Not registered? <a href="#">Create an account</a></p>
           </form>
         </div>
-
-            
       </div> 
     </section><!-- End Login Section -->
 
@@ -119,8 +116,9 @@
         <div class="col-lg-3 col-md-6 footer-links">
             <h4>Navigation</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="blog.html">Set Appointment</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#about">About</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#services">Set Appointment</a></li>
             </ul>
           </div>
 
