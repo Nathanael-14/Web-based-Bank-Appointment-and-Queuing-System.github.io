@@ -2,6 +2,10 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #444;
@@ -793,11 +797,13 @@ section {
 }
 
 
+
 .team .member .member-info h4 {
   font-weight: 700;
   margin: 15px 0 5px 0;
   font-size: 18px;
   display: inline;
+  text-align: center;
 }
 
 .team .member .member-info span {
@@ -816,35 +822,32 @@ section {
   color: #666;
 }
 
+.fullName
+{
+  text-align: center;
+}
+
 .team .member:hover .social {
   bottom: 0;
   opacity: 1;
   transition: bottom ease-in-out 0.4s;
 }
 
-.team .myAccount {
-  background: #f3f8fa;
-  border: 2px solid #295368;
-  margin: 0px 0px 0px 40px;
-  padding-left: 30px;
-  padding-top: 30px;
-  padding-bottom: 80px;
-  border-radius: 20px;
-}
 .team .myAccount h2{
   position: relative;
-  left: 210px;
+  text-align: center;
 }
-.team .myAccount h4{
+.team .myAccount h4, .team .myAccount h5{
   display: inline;
 }
-.team .myAccount h5{
-  display: inline;
+
+.team p, .team h4, .team h5
+{
+  margin: auto 5%;
 }
+
 .team .myAccountPosition {
   position: relative;
-  left: 220px;
-  bottom: 25px;
 }
 
 .team hr{
@@ -853,37 +856,20 @@ section {
   width: 600px;
 }
 
-.team .myAppointments {
+.team .profileSettings, .team .myAppointments, .team .myAccount {
   background: #f3f8fa;
   border: 2px solid #295368;
-  margin: 0px 0px 0px 40px;
-  padding-left: 30px;
   padding-top: 30px;
   padding-bottom: 80px;
   border-radius: 20px;
-}
-.team .myAppointments h2{
-  position: relative;
-  left: 205px;
 }
 
-.team .profileSettings {
-  background: #f3f8fa;
-  border: 2px solid #295368;
-  margin: 0px 0px 0px 40px;
-  padding-left: 30px;
-  padding-top: 30px;
-  padding-bottom: 80px;
-  border-radius: 20px;
-}
-.team .profileSettings h2{
-  position: relative;
-  left: 205px;
+.team .profileSettings h2, .team .myAppointments h2{
+  text-align: center;
 }
 
 .team .profileSettings form a{
   position: relative;
-  margin-left: 40px;
   border: 1px solid #295368;
   padding-left: 10px;
   padding-right: 10px;
@@ -902,7 +888,7 @@ section {
   padding-bottom:  4px;
 }
 
-.team .myAccountContainer{
+/*.team .myAccountContainer{
   position: absolute;
   right: 15%;
   transition: 0.3s;
@@ -920,6 +906,52 @@ section {
   right: 15%;
   visibility: hidden;
   transition: 0.3s;
+}*/
+
+.personalInformation, .userInformation
+{
+  margin: 4% 8%;
+  display: grid;
+  grid-template-columns: 25% auto;
+  grid-gap: 3%;
+}
+
+.noForm
+{
+  border: none;
+  background: inherit;
+  cursor: default;
+}
+
+.noForm:focus
+{
+  outline: none;
+}
+
+.tableContainer
+{
+  margin: 1% 5%;
+}
+
+.radioOptions input[type="radio"]
+{
+  display: grid;
+  grid-row: auto;
+  opacity: 0;
+}
+
+.radioOptions label
+{
+  cursor: pointer;
+  padding: 2%;
+  text-align: center;
+  margin: 0px -1px;
+  width: 100%;
+}
+
+.radioOptions input[type="radio"]:checked + label 
+{
+  background: #EEE;
 }
 /*--------------------------------------------------------------
 # END PROFILE PAGE
