@@ -2,8 +2,9 @@ var app = angular.module('dateTimeApp', []);
 
 app.controller('dateTimeCtrl', function ($scope) {
 	var ctrl = this;
-	
-	ctrl.selected_date = new Date();
+	var date = new Date();
+    date.setDate(date.getDate()+1);
+	ctrl.selected_date = date;
 	ctrl.selected_date.setHours(10);
 	ctrl.selected_date.setMinutes(0);
 	
@@ -11,7 +12,15 @@ app.controller('dateTimeCtrl', function ($scope) {
 		
 		// Do something with the returned date here.
 		
-		console.log(newdate);
+		//console.log(newdate);
+        try
+        {
+        document.getElementById("btncheck").value = newdate;
+        }
+        catch
+        {
+
+        }
 	};
 });
 
@@ -67,7 +76,8 @@ app.directive('datePicker', function ($timeout, $window) {
                 if (scope.currentViewDate.getMonth() == scope.localdate.getMonth()) {
                     if (scope.currentViewDate.getFullYear() == scope.localdate.getFullYear()) {
                         for (var number in scope.month) {
-                            if (scope.month[number].daydate == scope.localdate.getDate()) {
+                            if (scope.month[number].daydate == scope.localdate.getDate()) 
+                            {
                                 scope.month[number].selected = true;
 								if (scope.mondayfirst == 'true') {
 									if (parseInt(number) === 0) {
@@ -93,10 +103,15 @@ app.directive('datePicker', function ($timeout, $window) {
                     if (!scope.pickpast && date < today) {
                         showday = false;
                     }
-                    if (today.getDate() == date.getDate() &&
-                        today.getYear() == date.getYear() &&
-                        today.getMonth() == date.getMonth()) {
-                        showday = true;
+                    if (date.getDay() == 0) {
+                        showday = false;
+                    }
+
+                    var newdate = new Date(today);
+                    newdate.setDate(newdate.getDate()+10);
+                    if (date > newdate) 
+                    {
+                        showday = false;
                     }
                     var day = new Date(date);
                     var dayname = day.getDay();

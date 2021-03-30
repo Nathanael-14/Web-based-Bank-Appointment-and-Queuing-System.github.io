@@ -193,37 +193,52 @@ $('.message a').click(function(){
 //LOGIN FORM function end
 
 //PROFILE SETTINGS START
-function showMyAccount(){
-  document.getElementById("myAppointmentsContainer").style.opacity ="0";
-  document.getElementById("myAppointmentsContainer").style.visibility ="hidden";
-  document.getElementById("profileSettingsContainer").style.opacity ="0";
-  document.getElementById("profileSettingsContainer").style.visibility ="hidden";
-  document.getElementById("myAccountContainer").style.opacity ="100";
-  document.getElementById("myAccountContainer").style.visibility ="visible";
-}
-
-function showMyAppointments(){
-  document.getElementById("myAccountContainer").style.opacity ="0";
-  document.getElementById("myAccountContainer").style.visibility ="hidden";
-  document.getElementById("profileSettingsContainer").style.opacity ="0";
-  document.getElementById("profileSettingsContainer").style.visibility ="hidden";
-  document.getElementById("myAppointmentsContainer").style.opacity ="100";
-  document.getElementById("myAppointmentsContainer").style.visibility ="visible";
-}
-
-function showProfileSettings(){
-  document.getElementById("myAccountContainer").style.opacity ="0";
-  document.getElementById("myAccountContainer").style.visibility ="hidden";
-  document.getElementById("myAppointmentsContainer").style.opacity ="0";
-  document.getElementById("myAppointmentsContainer").style.visibility ="hidden";
-  document.getElementById("profileSettingsContainer").style.opacity ="100";
-  document.getElementById("profileSettingsContainer").style.visibility ="visible";
-}
-
 function profileEdit(){
   document.getElementsByName("firstName").removeAttr("readonly");
   //document.getElementById("firstName").style.opacity ="0";
   //document.getElementById("firstName").style.visibility ="hidden";
 }
+
+function myAccountChange(){
+  $("#profileSettingsContainer").animate({height: "hide", opacity: "hide"}, "slow");
+  $("#myAccountContainer").animate({height: "show", opacity: "show"}, "slow");
+  $("#myAppointmentsContainer").animate({height: "hide", opacity: "hide"}, "slow");
+}
+
+function mySettingChange(){
+  $("#profileSettingsContainer").animate({height: "show", opacity: "show"}, "slow");
+  $("#myAccountContainer").animate({height: "hide", opacity: "hide"}, "slow");
+  $("#myAppointmentsContainer").animate({height: "hide", opacity: "hide"}, "slow");
+}
+
+function myAppointmentChange(){
+  $("#profileSettingsContainer").animate({height: "hide", opacity: "hide"}, "slow");
+  $("#myAccountContainer").animate({height: "hide", opacity: "hide"}, "slow");
+  $("#myAppointmentsContainer").animate({height: "show", opacity: "show"}, "slow");
+}
+
+$("#formContainers").ready(mySettingChange());
 //PROFILE SETTINGS END
 
+//APPOINTMENT FORM 
+
+$("#btncheck").ready(function()
+  {
+    var opening = "You have selected "
+    var day = document.getElementById("reserveDay").value;
+    var month = document.getElementById("reserveMonth").value;
+    var year = document.getElementById("reserveYear").value;
+    document.getElementById("dateSubheader").innerHTML = opening.concat(month.concat("/",day),"/".concat(year));
+  });
+
+$("#appointmentForm").ready(function()
+  {
+    if(document.getElementById("reserveDay").value.length <= 0)
+    {
+      $("#appointmentForm").animate({opacity: "toggle"},"fast");
+      $("#datepicker").animate({width: "100%"},"fast");
+      document.getElementById("dateSubheader").innerHTML = "Please select a date"
+    }
+  });
+
+//APPOINTMENT END
