@@ -285,6 +285,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js'></script>
   <script  src="./assets/js/calendar.js"></script>
+  <script type="text/javascript" src="assets/js/appointment.js"></script>
 
 </body>
 
