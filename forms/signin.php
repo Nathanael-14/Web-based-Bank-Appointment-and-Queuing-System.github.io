@@ -53,7 +53,7 @@
 
     		if(count($arr)>0)
      		{	
-     			if($_SESSION["user_status"])
+     			if($_SESSION["user_status"] == 1)
      			{	
      				echo "<div class='alert alert-danger alert-dismissible'>
                   				<button type='button' class='close' data-dismiss='alert'>&times;</button>
@@ -68,7 +68,15 @@
 			                  <button type='button' class='close' data-dismiss='alert'>&times;</button>
 			                  <strong>Success!</strong> .".$_SESSION["username"]."
 			                </div>";
-            header("Location: index.php");
+
+            if($_SESSION["admin"] == 1)
+            {
+              header("Location: admin.php");
+            }
+            else
+            {
+              header("Location: index.php");
+            }
           }
         }
         else
