@@ -219,3 +219,40 @@ function myAppointmentChange(){
 
 $("#formContainers").ready(mySettingChange());
 //PROFILE SETTINGS END
+
+//ADMIN PAGE
+
+function approveStatus(){
+  document.getElementById("adminStatusBtn").innerHTML = document.getElementById("apprBtn").innerHTML;
+  document.getElementById("saveBtn").disabled = false;
+  $("#saveBtn").addClass("btn-primary");
+  document.getElementById("userStatus").value = document.getElementById("apprBtn").innerHTML;
+}
+
+function denyStatus(){
+  document.getElementById("adminStatusBtn").innerHTML = document.getElementById("denyBtn").innerHTML;
+  document.getElementById("saveBtn").disabled = false;
+  $("#saveBtn").addClass("btn-primary");
+  document.getElementById("userStatus").value = document.getElementById("denyBtn").innerHTML;
+}
+
+function failStatus(){
+  document.getElementById("adminStatusBtn").innerHTML = document.getElementById("failBtn").innerHTML;
+  document.getElementById("saveBtn").disabled = false;
+  $("#saveBtn").addClass("btn-primary");
+  document.getElementById("userStatus").value = document.getElementById("failBtn").innerHTML;
+}
+
+function showCalendar()
+{
+  $("#calendarForm").animate({height: "toggle", opacity: "toggle"}, "slow");
+  document.getElementById("saveBtn").disabled = false;
+  $("#saveBtn").addClass("btn-primary");
+}
+
+function newSlot(slot)
+{
+  document.getElementById("newSlot").value = slot;
+}
+
+//ADMIN END
