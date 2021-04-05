@@ -22,7 +22,15 @@
           echo "<td>".$v["user_status"]."</td>";
           echo "<td>".$v["admin"]."</td>";
           echo "<td>".$v["account_number"]."</td>";
-          echo "<td><button value=".$v["username"].">EDIT</button></td></tr>";
+          if($_SESSION["username"] == $v["username"])
+          {
+            echo "<td><button type='submit'disabled>EDIT</button></td></tr>";
+          }
+          else
+          {
+            echo "<td><form method='POST'><button type='submit' value=".$v["username"]." name='editBtn'>EDIT</button></form></td></tr>";
+          }
+          
         }
     }
     catch(PDOException $e) 

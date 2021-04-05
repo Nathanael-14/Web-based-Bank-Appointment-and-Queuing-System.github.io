@@ -15,7 +15,6 @@
         
         foreach($stmt->fetchAll() as $k=>$v) 
         {
-
           echo "<tr><td>".$v["account_number"]."</td>";
           echo "<td>".$v["id"]."</td>";
           echo "<td>".$v["slot_day"]."</td>";
@@ -26,7 +25,7 @@
           echo "<td>".$v["queue_number"]."</td>";
           echo "<td>".$v["service_type"]."</td>";
           echo "<td>".$v["appointment_status"]."</td>";
-          echo "<td><button value=".$v["id"].">EDIT</button></td></tr>";
+          echo "<td><form method='POST'><button type='submit' value=".$v["id"]." name='editBtn'>EDIT</button></form></td></tr>";
         }
     }
     catch(PDOException $e) 

@@ -22,9 +22,8 @@
           echo "<td>".$v["lName"]."</td>";
           echo "<td>".$v["email"]."</td>";
           echo "<td>".$v["approval_status"]."</td>";
-          echo "<td>".$v["status_comment"]."</td>";
           echo "<td>".$v["slot_id"]."</td>";
-          echo "<td><button value=".$v["id"].">EDIT</button></td></tr>";
+          echo "<td><form method='POST'><button type='submit' value=".$v["id"]." name='editBtn'>EDIT</button></form></td></tr>";
         }
     }
     catch(PDOException $e) 
