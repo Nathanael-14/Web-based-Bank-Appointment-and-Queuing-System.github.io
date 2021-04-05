@@ -83,7 +83,88 @@ if($_SESSION["admin"] != 1)
       </div>
     </section><!-- End Contact Section -->
 
+          <!-- ======= Modal ======= -->
+<?php
+
+  if($_SERVER["REQUEST_METHOD"] == "POST")
+  {
+    echo "<div class='modal show' id='modalForm'>
+      <div class='modal-dialog modal-dialog-centered'>
+        <div class='modal-content'>
+          <div class='modal-header'>
+            <h4 class='modal-title'>Edit </h4>
+            <button type='button' class='close' data-dismiss='modal'>&times;</button>
+          </div>
+          <div class='modal-body'>";
+
+          $servername = "localhost";
+          $name = "root";
+          $pass = "";
+          $dbname = "db_appointment";
+          $accountArr = array();
+
+          try
+          {
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $name, $pass);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $conn->prepare("SELECT * FROM tbl_new_accounts WHERE id = :id");
+            $stmt->bindParam(":id", $_POST["editBtn"]);
+            $stmt->execute();
+
+            foreach ($stmt->fetchAll() as $k=>$v)
+            {
+              foreach ($v as $key => $value) {
+                $accountArr[$key] = $value;
+              }
+            }
+          }
+          catch(PDOException $e) 
+          {
+              echo "Error: " . $e->getMessage();
+          }
+          $conn = null;
+
+          echo "<label for=''>New Account ID:</label>
+            <h5>".$accountArr["id"]."</h5>
+            <label for=''>Firt Name:</label>
+            <h5>".$accountArr["fName"]."</h5>
+            <label for=''>Middle Name:</label>
+            <h5>".$accountArr["mName"]."</h5>
+            <label for=''>Last Name:</label>
+            <h5>".$accountArr["lName"]."</h5>
+            <label for=''>Email:</label>
+            <h5>".$accountArr["email"]."</h5>
+            <label for=''>Appointment ID:</label>
+            <h5>".$accountArr["slot_id"]."</h5>
+            <label for=''>Approval Status:</label>
+            <div class='dropdown'>
+              <button class='dropdown-toggle' data-toggle='dropdown' id='adminStatusBtn'>".$accountArr["approval_status"]."
+              </button> 
+              <div class='dropdown-menu'>
+                  <a id='apprBtn' class='dropdown-item' onclick='approveStatus()'>APPROVED</a>
+                  <a id='denyBtn' class='dropdown-item' onclick='denyStatus()'>DENIED</a>
+                  <a id='failBtn' class='dropdown-item' onclick='failStatus()'>FAILED</a>
+              </div>
+            </div>
+          </div>
+          <div class='modal-footer'>
+            <form method='POST' action='newAccountChange.php'>
+              <input type='hidden' id='userStatus' name='userStatus' value=''>
+              <input type='hidden' name='id' value=".$accountArr["id"].">
+              <button type='submit' class='btn' id='saveBtn' disabled>Save</button>
+            </form>
+            <button type='button' class='btn btn-danger' data-dismiss='modal'>Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>";  
+  }
+?>
+  <!-- End Modal -->
+
     <!-- ======= Calendar Section ======= -->
+    <button  data-toggle="modal" data-target="#modalForm"  id='formb' style="opacity: 0%"></button>
    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
         <div class="tableContainer">
           <h2>New Accounts Table</h2><br>
@@ -96,7 +177,6 @@ if($_SESSION["admin"] != 1)
                 <th>LAST NAME</th>
                 <th>EMAIL</th>
                 <th>APPROVAL STATUS</th>
-                <th>COMMENT</th>
                 <th>APPOINTMENT ID</th>
                 <th>ACTION</th>
               </tr>
@@ -181,6 +261,7 @@ if($_SESSION["admin"] != 1)
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js'></script>
   <script  src="./assets/js/calendar.js"></script>
 
+<?php include "forms/modalLoad.php";?>
 </body>
 
 </html>

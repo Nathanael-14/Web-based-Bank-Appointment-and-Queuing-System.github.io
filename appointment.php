@@ -161,7 +161,7 @@
 
                     <label class="control-label" for="timeSlot">Time Slots Available:</label><br>
                     <div class="radio-toolbar" id="radioslots">
-                      <input type="radio" id="radio910" name="timeslot" value="9" >
+                      <input type="radio" id="radio910" name="timeslot" value="9">
                       <label for="radio910">9AM-10AM</label>
 
                       <input type="radio" id="radio1011" name="timeslot" value="10">

@@ -1,3 +1,10 @@
+<?php session_start();
+if($_SESSION["admin"] != 1)
+{
+  header("Location: index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,38 +85,23 @@
    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
         <div class="tableContainer">
           <h2>New Accounts Table</h2><br>
-          <table class="table table-bordered">
-            <thead>
+          <table class="table table-bordered table-hover">
+            <thead class="thead-light">
               <tr>
-                <th>ACCOUNT NUMBER</th>
+                <th>ID</th>
                 <th>FIRST NAME</th>
                 <th>MIDDLE NAME</th>
                 <th>LAST NAME</th>
-                <th>ACTION</th>
+                <th>EMAIL</th>
+                <th>APPROVAL STATUS</th>
+                <th>COMMENT</th>
+                <th>APPOINTMENT ID</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>123456789</td>
-                <td>fName</td>
-                <td>mName</td>
-                <td>lName</td>
-                <td><button>EDIT</button></td>
-              </tr>
-              <tr>
-                <td>000000000</td>
-                <td>John</td>
-                <td>Smith</td>
-                <td>Doe</td>
-                <td><button>EDIT</button></td>
-              </tr>
-              <tr>
-                <td>987654321</td>
-                <td>John</td>
-                <td>T.</td>
-                <td>Cruz</td>
-                <td><button>EDIT</button></td>
-              </tr>
+              <?php
+                include "forms/appointmentTbl.php";
+              ?>
             </tbody>
           </table>
         </div>

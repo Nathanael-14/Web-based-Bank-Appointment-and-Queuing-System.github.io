@@ -83,7 +83,97 @@ if($_SESSION["admin"] != 1)
       </div>
     </section><!-- End Contact Section -->
 
+      <!-- ======= Modal ======= -->
+<?php
+
+  if($_SERVER["REQUEST_METHOD"] == "POST")
+  {
+    echo "<div class='modal show' id='modalForm'>
+      <div class='modal-dialog modal-dialog-centered'>
+        <div class='modal-content'>
+          <div class='modal-header'>
+            <h4 class='modal-title'>Edit </h4>
+            <button type='button' class='close' data-dismiss='modal'>&times;</button>
+          </div>
+          <div class='modal-body'>";
+
+          $servername = "localhost";
+          $name = "root";
+          $pass = "";
+          $dbname = "db_appointment";
+          $accountArr = array();
+
+          try
+          {
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $name, $pass);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $conn->prepare("SELECT * FROM tbl_appointment WHERE id = :id");
+            $stmt->bindParam(":id", $_POST["editBtn"]);
+            $stmt->execute();
+
+            foreach ($stmt->fetchAll() as $k=>$v)
+            {
+              foreach ($v as $key => $value) {
+                $accountArr[$key] = $value;
+              }
+            }
+          }
+          catch(PDOException $e) 
+          {
+              echo "Error: " . $e->getMessage();
+          }
+          $conn = null;
+
+          echo "<label for=''>Appointment ID:</label>
+            <h5>".$accountArr["id"]."</h5>
+            <label for=''>Account Number:</label>
+            <h5>".$accountArr["account_number"]."</h5>
+            <label for=''>Service:</label>
+            <h5>".$accountArr["service_type"]."</h5>
+            <label for=''>Reserved Date and Queue Number:</label>
+            <div>
+              <h5>".$accountArr["slot_month"]."/".$accountArr["slot_day"]."/".$accountArr["slot_year"]." at ".$accountArr["slot_time"]." with Queue Number ".$accountArr["queue_number"]."</h5>
+
+                <div id='calendarForm'>"; 
+
+    include "forms/calendar.php";
+    
+
+          echo "</div>
+
+                <button type='button' onclick='showCalendar()'>Change</button> 
+            </div>
+            <label for=''>Appointment Status:</label>
+            <div class='dropdown'>
+              <button class='dropdown-toggle' data-toggle='dropdown' id='adminStatusBtn'>".$accountArr["appointment_status"]."
+              </button> 
+              <div class='dropdown-menu'>
+                  <a id='apprBtn' class='dropdown-item' onclick='approveStatus()'>APPROVED</a>
+                  <a id='denyBtn' class='dropdown-item' onclick='denyStatus()'>DENIED</a>
+                  <a id='failBtn' class='dropdown-item' onclick='failStatus()'>FAILED</a>
+              </div>
+            </div>
+          </div>
+          <div class='modal-footer'>
+            <form method='POST' action='appointmentStatusChange.php'>
+              <input type='hidden' id='newDate' name='newDate' value=''>
+              <input type='hidden' id='newSlot' name='newSlot' value=''> 
+              <input type='hidden' id='userStatus' name='userStatus' value=''>
+              <input type='hidden' name='id' value=".$accountArr["id"].">
+              <button type='submit' class='btn' id='saveBtn' disabled>Save</button>
+            </form>
+            <button type='button' class='btn btn-danger' data-dismiss='modal'>Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>";  
+  }
+?>
+  <!-- End Modal -->
+
     <!-- ======= Calendar Section ======= -->
+    <button  data-toggle="modal" data-target="#modalForm"  id='formb' style="opacity: 0%"></button>
    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
         <div class="tableContainer">
           <h2>Appointments Table</h2><br>
@@ -181,7 +271,9 @@ if($_SESSION["admin"] != 1)
   <script src="assets/js/main.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js'></script>
-  <script  src="./assets/js/calendar.js"></script>
+  <script  src="./assets/js/adminCalendar.js"></script>
+
+<?php include "forms/modalLoad.php";?>
 
 </body>
 

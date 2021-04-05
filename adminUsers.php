@@ -83,7 +83,86 @@ if($_SESSION["admin"] != 1)
       </div>
     </section><!-- End Contact Section -->
 
+              <!-- ======= Modal ======= -->
+<?php
+
+  if($_SERVER["REQUEST_METHOD"] == "POST")
+  {
+    echo "<div class='modal show' id='modalForm'>
+      <div class='modal-dialog modal-dialog-centered'>
+        <div class='modal-content'>
+          <div class='modal-header'>
+            <h4 class='modal-title'>Edit </h4>
+            <button type='button' class='close' data-dismiss='modal'>&times;</button>
+          </div>
+          <div class='modal-body'>";
+
+          $servername = "localhost";
+          $name = "root";
+          $pass = "";
+          $dbname = "db_appointment";
+          $accountArr = array();
+
+          try
+          {
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $name, $pass);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $conn->prepare("SELECT * FROM tbl_users WHERE username = :username");
+            $stmt->bindParam(":username", $_POST["editBtn"]);
+            $stmt->execute();
+
+            foreach ($stmt->fetchAll() as $k=>$v)
+            {
+              foreach ($v as $key => $value) {
+                $accountArr[$key] = $value;
+              }
+            }
+          }
+          catch(PDOException $e) 
+          {
+              echo "Error: " . $e->getMessage();
+          }
+          $conn = null;
+
+          echo "<label for=''>Username:</label>
+            <h5>".$accountArr["username"]."</h5>
+            <label for=''>Password:</label>
+            <h5>".$accountArr["password"]."</h5>
+            <label for=''>Email:</label>
+            <h5>".$accountArr["email"]."</h5>
+            <label for=''>Admin Authorithy:</label>
+            <h5>".$accountArr["admin"]."</h5>
+            <label for=''>Account Number:</label>
+            <h5>".$accountArr["account_number"]."</h5>
+            <label for=''>Account Status:</label>
+            <div class='dropdown'>
+              <button class='dropdown-toggle' data-toggle='dropdown' id='adminStatusBtn'>".$accountArr["user_status"]."
+              </button> 
+              <div class='dropdown-menu'>
+                  <a id='apprBtn' class='dropdown-item' onclick='approveStatus()'>0</a>
+                  <a id='denyBtn' class='dropdown-item' onclick='denyStatus()'>1</a>
+                  <a id='failBtn' class='dropdown-item' onclick='failStatus()'>2</a>
+              </div>
+            </div>
+          </div>
+          <div class='modal-footer'>
+            <form method='POST' action='userChangeStatus.php'>
+              <input type='hidden' id='userStatus' name='userStatus' value=''>
+              <input type='hidden' name='username' value=".$accountArr["username"].">
+              <button type='submit' class='btn' id='saveBtn' disabled>Save</button>
+            </form>
+            <button type='button' class='btn btn-danger' data-dismiss='modal'>Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>";  
+  }
+?>
+  <!-- End Modal -->
+
     <!-- ======= Calendar Section ======= -->
+    <button  data-toggle="modal" data-target="#modalForm"  id='formb' style="opacity: 0%"></button>
    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
         <div class="tableContainer">
           <h2>Users Table</h2><br>
@@ -178,6 +257,8 @@ if($_SESSION["admin"] != 1)
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js'></script>
   <script  src="./assets/js/calendar.js"></script>
+
+  <?php include "forms/modalLoad.php";?>
 
 </body>
 
