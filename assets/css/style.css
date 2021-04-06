@@ -1214,3 +1214,27 @@ section {
   transition: 0.3s;
 }
 /**ADMIN VIEW APPOINTMENTS PAGE CSS END*/
+
+/**MODAL ADMIN PAGE CSS START*/
+.Cancelbtn{
+  background: #0d2735;
+  border-color: #0d2735;
+}
+
+.ChangeBtn{
+  background: #0d2735;
+  border-color: #0d2735;
+}
+
+.SaveBtn{
+  background: #0d2735;
+  border-color: #0d2735;
+}
+
+.DropdownBtn{
+  background: #0d2735;
+  color: #fff;
+  border-color: #0d2735;
+  border-radius: 4px;
+}
+/**MODAL ADMIN PAGE CSS END*/
