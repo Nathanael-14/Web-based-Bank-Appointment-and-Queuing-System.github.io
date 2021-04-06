@@ -139,7 +139,7 @@ if($_SESSION["admin"] != 1)
             <h5>".$accountArr["slot_id"]."</h5>
             <label for=''>Approval Status:</label>
             <div class='dropdown'>
-              <button class='dropdown-toggle' data-toggle='dropdown' id='adminStatusBtn'>".$accountArr["approval_status"]."
+              <button class='dropdown-toggle DropdownBtn' data-toggle='dropdown' id='adminStatusBtn'>".$accountArr["approval_status"]."
               </button> 
               <div class='dropdown-menu'>
                   <a id='apprBtn' class='dropdown-item' onclick='approveStatus()'>APPROVED</a>
@@ -152,9 +152,9 @@ if($_SESSION["admin"] != 1)
             <form method='POST' action='newAccountChange.php'>
               <input type='hidden' id='userStatus' name='userStatus' value=''>
               <input type='hidden' name='id' value=".$accountArr["id"].">
-              <button type='submit' class='btn' id='saveBtn' disabled>Save</button>
+              <button type='submit' class='btn SaveBtn' id='saveBtn' disabled>Save</button>
             </form>
-            <button type='button' class='btn btn-danger' data-dismiss='modal'>Cancel</button>
+            <button type='button' class='btn btn-danger Cancelbtn' data-dismiss='modal'>Cancel</button>
           </div>
         </div>
       </div>
