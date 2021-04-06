@@ -142,11 +142,11 @@ if($_SESSION["admin"] != 1)
 
           echo "</div>
 
-                <button type='button' onclick='showCalendar()'>Change</button> 
+                <button type='button' class='btn btn-danger ChangeBtn' onclick='showCalendar()'>Change</button> 
             </div>
             <label for=''>Appointment Status:</label>
             <div class='dropdown'>
-              <button class='dropdown-toggle' data-toggle='dropdown' id='adminStatusBtn'>".$accountArr["appointment_status"]."
+              <button class='dropdown-toggle DropdownBtn' data-toggle='dropdown' id='adminStatusBtn'>".$accountArr["appointment_status"]."
               </button> 
               <div class='dropdown-menu'>
                   <a id='apprBtn' class='dropdown-item' onclick='approveStatus()'>APPROVED</a>
@@ -163,7 +163,7 @@ if($_SESSION["admin"] != 1)
               <input type='hidden' name='id' value=".$accountArr["id"].">
               <button type='submit' class='btn' id='saveBtn' disabled>Save</button>
             </form>
-            <button type='button' class='btn btn-danger' data-dismiss='modal'>Cancel</button>
+            <button type='button' class='btn btn-danger Cancelbtn' data-dismiss='modal'>Cancel</button>
           </div>
         </div>
       </div>
@@ -220,7 +220,7 @@ if($_SESSION["admin"] != 1)
          <div class="col-lg-3 col-md-6 footer-links">
           <h4>Navigation</h4>
           <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="index.php">Home</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="admin.php">Home</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="adminAppointment.php">View Appointments</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="adminNewAccount.php">View New Accounts</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="adminUsers.php">View Users</a></li>
