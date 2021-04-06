@@ -161,7 +161,7 @@ if($_SESSION["admin"] != 1)
               <input type='hidden' id='newSlot' name='newSlot' value=''> 
               <input type='hidden' id='userStatus' name='userStatus' value=''>
               <input type='hidden' name='id' value=".$accountArr["id"].">
-              <button type='submit' class='btn' id='saveBtn' disabled>Save</button>
+              <button type='submit' class='btn SaveBtn' id='saveBtn' disabled>Save</button>
             </form>
             <button type='button' class='btn btn-danger Cancelbtn' data-dismiss='modal'>Cancel</button>
           </div>
