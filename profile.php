@@ -52,7 +52,7 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class=""><a href="index.php">Home</a></li>
-          <li><a href="appointment.php">Set Appointment</a></li> 
+          <li><a href="appointment.php">Set Appointment</a></li>
           <!-- LOGIN HTML, TOP RIGHT NG HOME PAGE -->
           <?php
             echo "<li class='drop-down log'><a href='' class='login' id='login'>".$_SESSION["username"]."</a>
@@ -101,7 +101,7 @@
                     echo "<h4>".$account['first_name']." </h4>";
                     echo "<h4>".substr($account['middle_name'],0,1).". </h4>";
                     echo "<h4>".$account['last_name']."</h4>";
-                  ?> 
+                  ?>
                   <br><br>
                 </div>
 
@@ -175,21 +175,20 @@
               <h2>Profile Settings</h2><hr><br>
               <h4>Personal Info</h4>
               <p>Your information displayed in appointments</p>
-              <form> 
+              <form>
                 <div class="personalInformation">
                   <label for="firstName">First Name:</label>
-                  <input id="firstName" type="text" name="firstName" class="noForm" value=<?php echo $account['first_name'];?> readonly></input> 
+                  <input id="firstName" type="text" name="firstName" class="noForm" value=<?php echo $account['first_name'];?> readonly></input>
 
                   <label for="middleName">Middle Name:</label>
                   <input id="middleName" type="text" name="middleName" class="noForm" value=<?php echo $account['middle_name'];?> readonly></input>
-                 
+
                   <label for="lastName">Last Name:</label>
                   <input id="lastName" type="text" name="lastName" class="noForm" value=<?php echo $account['last_name'];?> readonly></input>
 
                   <label for="emailAddress">Email Address:</label>
                   <div class="emailForm">
-                    <input id="emailAddress" type="text" name="emailAddress" value=<?php echo $account['email'];?> readonly></input>
-                    <a id="profileEdit" onclick="profileEdit()">Edit</a>
+                    <input id="emailAddress" type="text" name="emailAddress" class="noForm" value=<?php echo $account['email'];?> readonly></input>
                   </div>
                 </div>
               </form><hr>
@@ -205,8 +204,19 @@
 
                   <label for="password">Password:</label>
                   <div class="passwordForm">
-                    <input id="password" type="password" name="password" value=<?php echo $account['password'];?> readonly></input>
-                    <a id="accountEdit" onclick="accountEdit()">Edit</a>
+                    <input type="password" id="myPass"value=<?php echo $account['password'];?> readonly></input>
+                    <input type="checkbox" onclick="showPassword()">Show Password
+                      <script>
+                        function showPassword() {
+                        var pass = document.getElementById("myPass");
+                        if (pass.type === "password") {
+                          pass.type = "text";
+                        } else {
+                          pass.type = "password";
+                        }
+                      }
+                  </script>
+                  
                   </div>
                 </div>
               </form>
@@ -235,7 +245,7 @@
               <li><i class="bx bx-chevron-right"></i> <a href="index.php#services">Set Appointment</a></li>
             </ul>
           </div>
-  
+
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
